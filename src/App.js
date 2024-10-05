@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./component/NavBar";
+import HomePage from "./component/HomePage";
+import Categories from "./component/Categories";
 import ProductPage from "./component/ProductPage";
 
 const App = () => {
