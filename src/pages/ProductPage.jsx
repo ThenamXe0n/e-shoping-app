@@ -1,5 +1,6 @@
 const ProductPage = () => {
   return (
+    <>
     <div className="grid-cols-2 grid">
       <div className="p-4 m-2">
         <div>
@@ -27,7 +28,7 @@ const ProductPage = () => {
         <button className="mx-5 bg-[#24333e] py-1 px-3 text-white font-semibold">Add to cart</button>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

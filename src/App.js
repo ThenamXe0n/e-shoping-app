@@ -1,19 +1,19 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./component/NavBar";
-import HomePage from "./component/HomePage";
-import Categories from "./component/Categories";
-import ProductPage from "./component/ProductPage";
+
+
+import Layout from "./component/layout/Layout";
+import ProductPage from "./pages/ProductPage";
 
 const App = () => {
   return (
-    
-      <BrowserRouter>
-        <Routes>
-          <Route path="/test" element={<ProductPage />}/>
-        </Routes>
-      </BrowserRouter>
-    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<ProductPage/>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
