@@ -13,8 +13,8 @@ const NavBar = () => {
       <nav>
         <ul className="flex items-center gap-10 cursor-pointer font-medium ">
           {NavList.map((item, index) => (
-            <Link to={item.url}>
-              <li key={index}>{item.title}</li>
+            <Link key={index} to={item.url}>
+              <li >{item.title}</li>
             </Link>
           ))}
         </ul>
