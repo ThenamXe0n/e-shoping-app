@@ -3,10 +3,10 @@ import React from "react";
 const ProductCard = ({ img, title, price, finalPrice, rating }) => {
   return (
     <div className="ml-6 ">
-      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-400 dark:border-gray-700">
-        <a href="#">
-          <img className="p-8 rounded-t-lg" src={img} alt="product image" />
-        </a>
+      <div className="w-full max-w-sm  border border-gray-200 rounded-lg shadow bg-indigo-600">
+        <div className="h-60 bg-white m-2 rounded-md ">
+          <img className="p-8 h-full rounded-t-lg m-auto" src={img} alt="product image" />
+        </div>
         <div className="px-5 pb-5">
           <a href="#">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
