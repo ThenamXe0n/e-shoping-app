@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ShopPage = () => {
   const [priceFilter,setPriceFilter] = useState(10000000000)
@@ -48,13 +49,14 @@ const ShopPage = () => {
           {productData.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {handleFilter().map((product) => (
-                <ProductCard
+               <Link to={`/product/${product.product}`}> <ProductCard
                   img={product?.thumbnail}
-                  title={product?.title}
+                  title={product?.product}
                   price={product.price}
                   finalPrice={product.finalprice}
                   rating={product.rating}
                 />
+                </Link>
               ))}
             </div>
           ) : (

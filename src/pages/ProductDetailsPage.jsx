@@ -1,10 +1,28 @@
-import { useState } from "react";
-import { Products } from "../Data/productData";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-const ProductPage = () => {
-  const {name} = useParams()
-  let selectedProduct = Products.find((item) => item.title.includes(name));
-  const [selectedImage,setSelectedImage]=useState(selectedProduct.thumbnail)
+const ProductDetailsPage = () => {
+  const { name } = useParams();
+  const [selectedProduct, setSelectedProduct] = useState({});
+
+  const getSeletedProductDetails = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/allproducts?product=${name}`
+      );
+      setSelectedProduct(response.data[0]);
+      setSelectedImage(response.data[0].thumbnail)
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getSeletedProductDetails();
+  }, []);
+
+  // console.log(Products);
+  const [selectedImage, setSelectedImage] = useState(selectedProduct.thumbnail);
   return (
     <>
       <div className="grid-cols-2 grid">
@@ -13,8 +31,14 @@ const ProductPage = () => {
             <img src={selectedImage} width={"200px"} alt="main Product" />
           </div>
           <div className="flex my-3 gap-4">
-            {selectedProduct.images.map((imageSrc,i) => (
-              <img onClick={(e)=>setSelectedImage(e.target.src)} key={i} className="h-32" src={imageSrc} alt="main Product" />
+            {selectedProduct?.images?.map((imageSrc, i) => (
+              <img
+                onClick={(e) => setSelectedImage(e.target.src)}
+                key={i}
+                className="h-32"
+                src={imageSrc}
+                alt="main Product"
+              />
             ))}
           </div>
         </div>
@@ -46,4 +70,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductDetailsPage;
