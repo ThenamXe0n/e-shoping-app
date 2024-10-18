@@ -8,7 +8,7 @@ const feturedData = [
         viewBox="0 0 24 24"
         strokeWidth="2"
         stroke="currentColor"
-        className="size-10 text-blue-700"
+        className="size-10 text-blue-500"
       >
         <path
           strokeLinecap="round"
@@ -18,7 +18,7 @@ const feturedData = [
       </svg>
     ),
     title: "Free shipping",
-    des: "when you spend $80 or more",
+    des: "When you spend $80 or more",
   },
   {
     icon: (
@@ -26,19 +26,19 @@ const feturedData = [
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke-width="2"
+        strokeWidth="2"
         stroke="currentColor"
-        class="size-10 text-blue-400"
+        className="size-10 text-blue-500"
       >
         <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
         />
       </svg>
     ),
     title: "We are available 24x7",
-    des: "need help? Contact us anytime",
+    des: "Need help? Contact us anytime",
   },
   {
     icon: (
@@ -46,19 +46,19 @@ const feturedData = [
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke-width="2"
+        strokeWidth="2"
         stroke="currentColor"
-        class="size-10 text-blue-400"
+        className="size-10 text-blue-500"
       >
         <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
         />
       </svg>
     ),
-    title: "We are available 24x7",
-    des: "need help? Contact us anytime",
+    title: "Satisfied or return",
+    des: "Easy 30-day return policy",
   },
   {
     icon: (
@@ -66,19 +66,19 @@ const feturedData = [
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke-width="2"
+        strokeWidth="2"
         stroke="currentColor"
-        class="size-10 text-blue-400"
+        className="size-10 text-blue-500"
       >
         <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
         />
       </svg>
     ),
-    title: "We are available 24x7",
-    des: "need help? Contact us anytime",
+    title: "100% secure payments",
+    des: "Visa, Mastercard, UPI, PayPal",
   },
 ];
 
@@ -87,15 +87,17 @@ const CardSection = ({ id, icon, title, des }) => {
     <>
       <div
         className={
-          id != 3 ? "flex items-center justify-evenly gap-2 " : "flex items-center  gap-2 "
+          id != 3
+            ? " flex items-center justify-evenly gap-2 "
+            : "flex items-center  gap-2 "
         }
       >
         <div id="icon">{icon}</div>
         <div>
-          <h3 className="text-xl font-bold">{title}</h3>
-          <p className="text-gray-400">{des}</p>
+          <h3 className="font-bold">{title}</h3>
+          <p className="font-light">{des}</p>
         </div>
-      {id !==3 && <div className="w-2 h-12 bg-slate-500"></div>}
+        {id !== 3 && <div className="hidden lg:block w-[2px] h-12 bg-slate-500"></div>}
       </div>
     </>
   );
@@ -103,9 +105,10 @@ const CardSection = ({ id, icon, title, des }) => {
 
 const FeatureCard = () => {
   return (
-    <div className="border-2 w-11/12  grid grid-cols-4 items-center justify-evenly border-black mx-auto my-3 py-6 px-3 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-evenly p-5 border-2 mx-auto border-gray-400 bg-white rounded-xl w-[80vw] my-4">
       {feturedData.map((data, index) => (
         <CardSection
+          key={index}
           id={index}
           title={data?.title}
           icon={data.icon}

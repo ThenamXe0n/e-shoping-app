@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .active{
-    background-color: aqua!important;
-} */ 
+body{
+    font-family: sans-serif !important;
+}
