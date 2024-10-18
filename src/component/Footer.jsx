@@ -4,33 +4,33 @@ import { FooterCompany, FooterQuick } from "../Data/NavItemData";
 
 const Footer = () => {
   return (
-    <div className="w-screen h-80 border-t-2 shadow-xl flex items-center justify-evenly gap-40 bg-[#FFD43D]">
-      <div>
-        <img className="my-5 " src={Logo} width={150} height={150} alt="" />
-        <p className="font-light">Lorem ipsum dolor sit amet <br />
-        consectetur adipisicing elit.</p>
+    <div className="w-screen p-2 border-t-2 rounded-lg flex flex-col md:flex-row md:justify-around items-center bg-[#FFD43D]">
+      <div className="flex items-center flex-col p-2">
+        <img className="my-5 " src={Logo} width={150} height={150} alt="Company-Logo" />
+        <p className="text-sm">
+          Lorem ipsum dolor sit amet <br />
+          consectetur adipisicing elit.
+        </p>
       </div>
 
-      <div className="flex flex-col gap-5" id="company">
-        <div>
-          <h1 className="font-semibold text-xl">Company</h1>
-        </div>
-        <div className="flex flex-col gap-2">
-        {FooterCompany.map((item, index)=>(
-            <h3 key={index}>{item.title}</h3>
+      {/* COMPANY */}
+      <div className="flex flex-col p-2" id="company">
+        <h1 className="font-bold text-2xl my-2">Company</h1>
+        <ul className="flex flex-col">
+          {FooterCompany.map((item, index) => (
+            <li key={index}>{item.title}</li>
           ))}
-        </div>
+        </ul>
       </div>
 
-      <div className="flex flex-col gap-5" id="quick-links">
-        <div>
-          <h1 className="font-semibold text-xl">Quick Links</h1>
-        </div>
-        <div className="flex flex-col gap-2">
-          {FooterQuick.map((item, index)=>(
-            <h3 key={index}>{item.title}</h3>
+      {/* QUICK LINKS */}
+      <div className="flex flex-col p-2" id="quick-links">
+        <h1 className="font-bold text-2xl my-2">Quick Links</h1>
+        <ul className="flex flex-col">
+          {FooterQuick.map((item, index) => (
+            <li key={index}>{item.title}</li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
