@@ -26,7 +26,7 @@ const ProductSlider = () => {
         className="mySwiper h-[50vh] "
       >
         {images.map((item, index) => (
-          <SwiperSlide className="aspect-[7/5]">
+          <SwiperSlide key={index} className="aspect-[7/5]">
             <img className="w-full object-cover" src={item} alt={index} />
           </SwiperSlide>
         ))}

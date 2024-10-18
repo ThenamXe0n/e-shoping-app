@@ -4,7 +4,7 @@ import { FooterCompany, FooterQuick } from "../Data/NavItemData";
 
 const Footer = () => {
   return (
-    <div className="w-screen p-2 border-t-2 rounded-lg flex flex-col md:flex-row md:justify-around items-center bg-[#FFD43D]">
+    <div className="w-screen p-2 border-t-2 rounded-lg flex flex-col md:flex-row md:justify-around items-center bg-blue-400">
       <div className="flex items-center flex-col p-2">
         <img className="my-5 " src={Logo} width={150} height={150} alt="Company-Logo" />
         <p className="text-sm">
