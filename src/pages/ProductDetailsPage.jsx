@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ProductContext from "../contextAPI/ProductContext";
 const ProductDetailsPage = () => {
+  const {product} = useContext(ProductContext)
   const { name } = useParams();
   const [selectedProduct, setSelectedProduct] = useState({});
 
@@ -22,7 +24,7 @@ const ProductDetailsPage = () => {
   }, []);
 
   // console.log(Products);
-  const [selectedImage, setSelectedImage] = useState(selectedProduct.thumbnail);
+  const [selectedImage, setSelectedImage] = useState(selectedProduct?.thumbnail);
   return (
     <>
       <div className="grid-cols-2 grid">
@@ -45,12 +47,12 @@ const ProductDetailsPage = () => {
         <div className="p-4 m-2">
           <h5 className="text-sm ">File Path</h5>
           <h2 className="text-4xl my-2 font-semibold">
-            {selectedProduct.title}
+            {selectedProduct?.title}
           </h2>
           <h3 className="text-2xl font-semibold">
-            $ <span>{selectedProduct.price}</span>
+            $ <span>{selectedProduct?.price}</span>
           </h3>
-          <span className="my-1 block">{selectedProduct.category}</span>
+          <span className="my-1 block">{selectedProduct?.category}</span>
           <ul className="px-8">
             <li className="list-disc text-sm">List item 1</li>
             <li className="list-disc text-sm">List item 2</li>

@@ -1,30 +1,33 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Logo from "../Assets/logo-eShop.svg";
 import { Link } from "react-router-dom";
 import { NavList } from "../Data/NavItemData";
 import { IoSearch } from "react-icons/io5";
 import axios from "axios";
+import ProductContext from "../contextAPI/ProductContext";
 
 const NavBar = () => {
+  const {product} = useContext(ProductContext);
   const [profileOpen, setProfileOpen] = useState(false);
   const [searchedProduct, setSearchedProduct] = useState(null);
   const [productList, setProductList] = useState([]);
 
+  
 
-  const getSeletedProductDetails = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:8080/allproducts?product=${searchedProduct}`
-      );
-      setProductList(response.data);
-    } catch (err) {
-      console.log(err.message);
-    }
+  const filterProduct = () => {
+    const filteredProducts = product.filter((item) =>
+      item.product.includes(searchedProduct) || item.category.includes(searchedProduct) || String(item.finalprice).includes(searchedProduct)
+    );
+    console.log("filtered", filterProduct);
+    setProductList(filteredProducts);
   };
 
   useEffect(() => {
-    getSeletedProductDetails();
+    filterProduct();
   }, [searchedProduct]);
+
+
+console.log(product)
 
   return (
     <header className=" w-screen bg-white h-16 flex items-center justify-evenly shadow-xl fixed top-0 z-50 ">
@@ -53,29 +56,27 @@ const NavBar = () => {
           type="search"
           placeholder="enter product name"
         />
-        {searchedProduct?.length >= 3 && (
+        {searchedProduct?.length >=2 && (
           <div
             id="searched-product-container"
             className="min-h-[40vh] p-2  min-w-[40vw] border-2 top-12 bg-slate-600 right-56 relative self-start"
           >
-          {productList.map((item)=>(  <div
-              id="product-list"
-              className="flex items-center gap-x-4 border-2 rounded-md my-2 border-white shadow-md px-2"
-            >
-              <div
-                id="thumbnail"
-                className="rounded-2xl bg-white p-1 m-1 size-12 "
+            {productList.map((item) => (
+             <Link to={`/product/${item.product}`} onClick={()=>{setSearchedProduct(null)}}> <div
+                id="product-list"
+                className="flex items-center gap-x-4 border-2 rounded-md my-2 border-white shadow-md px-2"
               >
-                <img
-                  src={item?.thumbnail}
-                  alt="thumnail"
-                />
+                <div
+                  id="thumbnail"
+                  className="rounded-2xl bg-white p-1 m-1 size-12 "
+                >
+                  <img src={item?.thumbnail} alt="thumnail" />
+                </div>
+                <h3 className="capitalize font-medium ">{item.product}</h3>
+                <p>${item.finalprice}</p>
               </div>
-              <h3 className="capitalize font-medium ">{item.product}</h3>
-              <p>${item.finalprice}</p>
-            </div>))}
-            
-        
+              </Link>
+            ))}
           </div>
         )}
       </div>
