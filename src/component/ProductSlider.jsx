@@ -6,8 +6,8 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const ProductSlider = () => {
   let images = [
-    "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4bb228120705693.60b70f428bd19.jpg",
-    "https://img.freepik.com/free-vector/natural-cosmetics-skin-care-lotion-banner_33099-1957.jpg?size=626&ext=jpg",
+    "https://slidebazaar.com/wp-content/uploads/2021/09/product-banner-jpg.webp",
+    "https://graphicsfamily.com/wp-content/uploads/edd/2022/12/E-commerce-Product-Banner-Design-2048x1152.jpg",
     "https://static.vecteezy.com/system/resources/previews/005/741/458/original/cosmetics-or-skin-care-product-ads-with-bottle-banner-ad-for-beauty-products-and-leaf-background-glittering-light-effect-design-vector.jpg",
   ];
   return (
@@ -18,16 +18,16 @@ const ProductSlider = () => {
           clickable: true,
         }}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         navigation={true}
         modules={[Pagination, Autoplay,Navigation]}
-        className="mySwiper h-[50vh] "
+        className="mySwipe"
       >
         {images.map((item, index) => (
-          <SwiperSlide key={index} className="aspect-[7/5]">
-            <img className="w-full object-cover" src={item} alt={index} />
+          <SwiperSlide key={index} >
+            <img className="max-h-96 w-full object-fill aspect-[16/9] overflow-visible" src={item} alt={index} />
           </SwiperSlide>
         ))}
       </Swiper>

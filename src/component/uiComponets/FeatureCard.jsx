@@ -105,7 +105,7 @@ const CardSection = ({ id, icon, title, des }) => {
 
 const FeatureCard = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-evenly p-5 border-2 mx-auto border-gray-400 bg-white rounded-xl w-[80vw] my-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-evenly p-5 border-2 mx-auto border-gray-400 bg-white rounded-lg w-[80vw] my-4">
       {feturedData.map((data, index) => (
         <CardSection
           key={index}

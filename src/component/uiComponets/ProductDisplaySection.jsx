@@ -14,7 +14,7 @@ const ProductCard = () => {
 
 const ProductDisplaySection = () => {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 p-5 border-2 mx-auto border-gray-400 bg-white rounded-xl my-4 w-[80vw] min-h-[50vh]">
+    <div className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 p-5 border-2 mx-auto border-gray-400 bg-white rounded-lg my-4 w-[80vw] min-h-[50vh]">
       <ProductCard />
       <ProductCard />
       <ProductCard />
