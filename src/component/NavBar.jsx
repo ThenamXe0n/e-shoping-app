@@ -93,13 +93,13 @@ console.log(product)
             Profile
           </button>
           {profileOpen && (
-            <div className="text-lg my-4 absolute shadow-xl right-24 px-5 py-5 w-60 h-60 flex gap-20">
+            <div className="text-lg my-4 absolute shadow-xl backdrop-blur-sm bg-[#5ae7e74f] right-24 px-5 py-5 w-60 h-60 flex gap-20">
               <div className="flex h-fit p-2 items-center gap-4 border-2 font-light">
                 <div
                   id="profile"
                   className="size-11 rounded-full bg-cyan-400"
                 ></div>
-                <div id="user-info">
+                <div id="user-info " className="font-bold text-black">
                   <h3>user name</h3>
                   <p>user@gmail.com</p>{" "}
                 </div>

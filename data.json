@@ -920,5 +920,82 @@
       "des3_img": "https://m.media-amazon.com/images/G/31/img22/Tablets/Ipad_pro_6gen/r1604_r1605_Product_Page_Flex_Module_Avail_Amazon_Desktop__en-IN_04._CB605157966_.jpg",
       "productid": "66884b17cfd4c164f52761a0"
     }
+  ],
+  "Users": [
+    {
+      "id":"1",
+      "userId": "demo@gmail.com",
+      "name": "John Doe",
+      "password": "Demo@123",
+      "address": "46/c bholaram marg , near bhawarkua indore(M.P)",
+      "mobile": "989585698",
+      "wishlist": [
+        {
+          "product": "casio watch",
+          "thumbnail": "https://m.media-amazon.com/images/I/71D7Lbg-s-L._SX679_.jpg",
+          "price": 3000,
+          "brand": "Titan",
+          "category": "watch",
+          "sub_category": "Watch",
+          "rating": 5,
+          "images": [
+            "https://m.media-amazon.com/images/I/71j-zlnn+tL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61QXphGIvOL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71cz6A8P4DL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71vsK8jErJL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71D7Lbg-s-L._SX679_.jpg"
+          ],
+          "discription": "Titan brown belt with silver round dial men's wrist watch ",
+          "finalprice": 2500,
+          "keywords": "titan watch",
+          "stock": 0,
+          "productid": "65bf9894d6c94d145dee1734"
+        }
+      ],
+      "cartItem": [
+        {
+          "product": "casio watch",
+          "thumbnail": "https://m.media-amazon.com/images/I/71D7Lbg-s-L._SX679_.jpg",
+          "price": 3000,
+          "brand": "Titan",
+          "category": "watch",
+          "sub_category": "Watch",
+          "rating": 5,
+          "images": [
+            "https://m.media-amazon.com/images/I/71j-zlnn+tL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61QXphGIvOL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71cz6A8P4DL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71vsK8jErJL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71D7Lbg-s-L._SX679_.jpg"
+          ],
+          "discription": "Titan brown belt with silver round dial men's wrist watch ",
+          "finalprice": 2500,
+          "keywords": "titan watch",
+          "stock": 0,
+          "productid": "65bf9894d6c94d145dee1734"
+        },
+        {
+          "product": "Red tape white sneakers",
+          "thumbnail": "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/i/l/y/8-rsl021-red-tape-white-black-original-imagw6whg3ewycqu.jpeg?q=70&crop=false",
+          "price": 3000,
+          "brand": "Red Tape",
+          "category": "footwear",
+          "sub_category": "shoes",
+          "rating": 5,
+          "images": [
+            "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/i/l/y/8-rsl021-red-tape-white-black-original-imagw6whg3ewycqu.jpeg?q=70&crop=false",
+            "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/y/v/4/8-rsl021-red-tape-white-black-original-imagw6whee3fewh5.jpeg?q=70&crop=false",
+            "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/s/p/r/8-rsl021-red-tape-white-black-original-imagw6wh4jtkcjv2.jpeg?q=70&crop=false",
+            "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/i/l/y/8-rsl021-red-tape-white-black-original-imagw6whg3ewycqu.jpeg?q=70&crop=false",
+            "https://m.media-amazon.com/images/I/815S3bYIj0L._SY695_.jpg"
+          ],
+          "discription": "Casual Sneaker Shoes for Men | Soft Cushioned Insole, Slip-Resistance Sneakers For Men  (White) ",
+          "finalprice": 2500,
+          "keywords": "Men's shoes white sneakers rade tape runnings kicks footwear",
+          "stock": 100,
+          "productid": "65c0bd9982d003cca389944b"
+        }
+      ]
+    }
   ]
 }
