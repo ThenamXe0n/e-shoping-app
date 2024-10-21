@@ -88,8 +88,8 @@ const CardSection = ({ id, icon, title, des }) => {
       <div
         className={
           id != 3
-            ? " flex items-center justify-evenly gap-2 "
-            : "flex items-center  gap-2 "
+            ? "flex items-center md:justify-evenly gap-2 after:gap-0"
+            : "flex items-center gap-2 "
         }
       >
         <div id="icon">{icon}</div>
@@ -97,7 +97,9 @@ const CardSection = ({ id, icon, title, des }) => {
           <h3 className="font-bold">{title}</h3>
           <p className="font-light">{des}</p>
         </div>
-        {id !== 3 && <div className="hidden lg:block w-[2px] h-12 bg-slate-500"></div>}
+        {id !== 3 && (
+          <div className="hidden lg:block w-[2px] h-12 bg-slate-500"></div>
+        )}
       </div>
     </>
   );

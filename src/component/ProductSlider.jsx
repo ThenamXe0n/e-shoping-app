@@ -27,7 +27,7 @@ const ProductSlider = () => {
       >
         {images.map((item, index) => (
           <SwiperSlide key={index} >
-            <img className="max-h-96 w-full object-fill aspect-[16/9] overflow-visible" src={item} alt={index} />
+            <img className="h-[40vh] lg:h-[60vh] w-full object-fill aspect-[16/9] overflow-visible" src={item} alt={index} />
           </SwiperSlide>
         ))}
       </Swiper>

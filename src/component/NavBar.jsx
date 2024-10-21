@@ -3,15 +3,23 @@ import Logo from "../Assets/logo-eShop.svg";
 import { Link } from "react-router-dom";
 import { NavList } from "../Data/NavItemData";
 import { FaRegUser } from "react-icons/fa";
+import SearchBar from "./uiComponets/SearchBar";
 
 const NavBar = () => {
   const [profileOpen, setProfileOpen] = useState(false);
+  const [searchvalue, setSearchValue] = useState(null);
   const navDiv = useRef();
+
   return (
-    <header className="h-fit flex items-center md:justify-around justify-between bg-blue-600 sticky top-0 z-50 text-xl py-5 text-white rounded-b shadow-2xl">
+    <header className="h-fit flex items-center md:justify-around justify-between bg-blue-600 sticky top-0 z-50 text-xl py-3 text-white rounded-b shadow-2xl">
+      {/* COMPANY LOGO */}
       <div className="pl-5 md:pl-0">
-        <img src={Logo} alt="Logo" />
+        <Link to={"/"}>
+          <img src={Logo} alt="Logo" />
+        </Link>
       </div>
+
+      {/* MOBILE RESPONSIVE MENU WITH LIST ITEMS */}
       <nav
         ref={navDiv}
         className="absolute bg-[#2563ebcc] rounded-lg shadow-2xl md:bg-inherit min-h-[40vh] md:min-h-fit flex items-center justify-center left-0 top-[8vh] duration-1000 w-full md:w-auto md:static"
@@ -26,31 +34,39 @@ const NavBar = () => {
           ))}
         </ul>
       </nav>
+
+      {/* SEARCH BAR */}
+      <SearchBar />
+
+      {/* PROFILE OPTIONS WITH MOBILE MENU SVG */}
       <div id="profile-opt" className="flex items-center font-medium ">
         <div className="profile">
-          <FaRegUser className="text-2xl hover:text-gray-400 duration-300 hover:cursor-pointer"
+          <FaRegUser
+            className="text-2xl hover:text-gray-400 duration-300 hover:cursor-pointer"
             onClick={() => {
               setProfileOpen(!profileOpen);
-            }}/>
+            }}
+          />
 
+          {/* USER PROFILE MENU */}
           {profileOpen && (
-            <div className="text-lg m-2 absolute bg-white text-black shadow-2xl right-28 p-2 max-h-fit rounded-lg">
+            <div className="text-lg absolute bg-white text-black shadow-2xl right-0 lg:right-24 p-2 max-h-fit rounded-lg">
               <div className="flex p-2 items-center gap-4 border-2 rounded-lg">
                 <div
                   id="profile"
                   className="size-12 rounded-full bg-blue-200"
                 ></div>
                 <div id="user-info">
-                  <span>John Doe</span><br/>
+                  <span>John Doe</span>
+                  <br />
                   <span className="text-sm font-thin">user@gmail.com</span>
                 </div>
               </div>
-              {/* <p className="">Username</p>
-              <div className="w-6 h-6 rounded-full bg-cyan-400"></div> */}
             </div>
           )}
         </div>
-        <svg id="menu"
+        <svg
+          id="menu"
           onClick={(e) =>
             console.log(navDiv.current.classList.toggle("top-[-80vh]"))
           }
