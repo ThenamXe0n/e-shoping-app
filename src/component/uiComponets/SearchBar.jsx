@@ -5,13 +5,13 @@ import ProductContext from "../contextApi/ProductContext";
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const {fetchedData} = useContext(ProductContext)  
-  console.log(fetchedData)
+  // console.log(fetchedData)
 
   // SORTING FILTERED DATA FROM API AND USING SEARCH VALUE AS A DEPENDENCY TO AVOID INFITE RE-RENDER
   const [filteredData,setFilteredData] = useState([])
   function filterProducts(){
     setFilteredData(fetchedData?.filter((item)=>(item.product.includes(searchValue) || item.category.includes(searchValue) )));
-    console.log(filteredData)
+    // console.log(filteredData)
   }
   useEffect(()=>{
     filterProducts()

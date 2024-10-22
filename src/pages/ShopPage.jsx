@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ShopPage = () => {
-  const [priceFilter,setPriceFilter] = useState(10000000000)
+  const [priceFilter, setPriceFilter] = useState(10000000000);
   const [productData, setProuductData] = useState([]);
 
   async function loadProducts() {
@@ -16,12 +17,13 @@ const ShopPage = () => {
     }
   }
 
-  function handleFilter(){
-    let filteredProducts = productData.filter((item)=>item.finalprice<=priceFilter)
-    console.log("filtered",filteredProducts)
-    return filteredProducts
+  function handleFilter() {
+    let filteredProducts = productData.filter(
+      (item) => item.finalprice <= priceFilter
+    );
+    console.log("filtered", filteredProducts);
+    return filteredProducts;
   }
-
 
   useEffect(() => {
     loadProducts();
@@ -44,24 +46,25 @@ const ShopPage = () => {
           </div>
         </div>
         {/* ----------------------product section--------------- */}
-        <div className="my-5 border-2  py-4 px-2 min-h-[60vh]   rounded-3xl ">
+        <div className="my-5 border-2 py-4 px-2 min-h-[60vh] rounded-3xl">
           {productData.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-              {handleFilter().map((product,index) => (
-                <ProductCard
-                  key={index}
-                  img={product?.thumbnail}
-                  title={product?.product}
-                  price={product.price}
-                  finalPrice={product.finalprice}
-                  rating={product.rating}
-                />
+              {handleFilter().map((product, index) => (
+                <Link to={`/product/${product.product}`}>
+                  <ProductCard
+                    key={index}
+                    img={product?.thumbnail}
+                    title={product?.product}
+                    price={product?.price}
+                    finalPrice={product?.finalprice}
+                    rating={product?.rating}
+                  />
+                </Link>
               ))}
             </div>
           ) : (
-            <div className="text-5xl font-extrabold   flex items-center justify-center h-full ">
-              {" "}
-              No Product Found!{" "}
+            <div className="text-5xl font-extrabold flex items-center justify-center h-full ">
+              No Product Found!
             </div>
           )}
         </div>
@@ -73,7 +76,7 @@ const ShopPage = () => {
           <input
             className="w-full"
             type="range"
-           onChange={(e)=>setPriceFilter(e.target.value)}
+            onChange={(e) => setPriceFilter(e.target.value)}
             max={1000}
             min={299}
           />
