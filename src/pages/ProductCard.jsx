@@ -4,7 +4,7 @@ const ProductCard = ({ img, title, price, finalPrice, rating }) => {
   const stars=[]
   const ratingProducer = () => {
     for (let i = 0; i <rating; i++) {
-      stars.push(<GoStarFill fill="yellow" />);
+      stars.push(<GoStarFill fill="yellow" key={i} />);
     }
   };
   ratingProducer()

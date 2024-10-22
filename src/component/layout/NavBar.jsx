@@ -22,7 +22,7 @@ const NavBar = () => {
       {/* MOBILE RESPONSIVE MENU WITH LIST ITEMS */}
       <nav
         ref={navDiv}
-        className="absolute bg-[#2563ebcc] rounded-lg shadow-2xl md:bg-inherit min-h-[40vh] md:min-h-fit flex items-center justify-center left-0 top-[8vh] duration-1000 w-full md:w-auto md:static"
+        className="absolute bg-[#2563ebcc] rounded-lg shadow-2xl md:bg-inherit min-h-[40vh] md:min-h-fit flex items-center justify-center left-0 top-[-80vh] duration-1000 w-full md:w-auto md:static"
       >
         <ul className="flex flex-col md:flex-row items-center gap-4">
           {NavList.map((item, index) => (
@@ -67,9 +67,10 @@ const NavBar = () => {
         </div>
         <svg
           id="menu"
-          onClick={(e) =>
-            console.log(navDiv.current.classList.toggle("top-[-80vh]"))
-          }
+          onClick={(e) => {
+            navDiv.current.classList.toggle("top-[-80vh]");
+            navDiv.current.classList.toggle("top-[8vh]");
+          }}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
