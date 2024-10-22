@@ -28,7 +28,7 @@ const ShopPage = () => {
   }, []);
 
   return (
-    <div className="flex w-screen">
+    <div className="flex">
       <section className=" lg:px-12 w-screen lg:w-[79vw] md:w-[79vw] ">
         <h1 className="text-3xl px-4 font-bold">Shop Page</h1>
         <div className="flex px-4 justify-between items-center">
@@ -50,7 +50,7 @@ const ShopPage = () => {
               {handleFilter().map((product) => (
                 <ProductCard
                   img={product?.thumbnail}
-                  title={product?.title}
+                  title={product?.product}
                   price={product.price}
                   finalPrice={product.finalprice}
                   rating={product.rating}

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
-import Logo from "../Assets/logo-eShop.svg";
+import Logo from "./logo-eShop.svg";
 import { Link } from "react-router-dom";
-import { NavList } from "../Data/NavItemData";
+import { NavList } from "../../Data/NavItemData";
 import { FaRegUser } from "react-icons/fa";
-import SearchBar from "./uiComponets/SearchBar";
+import SearchBar from "../uiComponets/SearchBar";
 
 const NavBar = () => {
   const [profileOpen, setProfileOpen] = useState(false);

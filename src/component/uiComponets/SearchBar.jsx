@@ -1,25 +1,16 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
+import ProductContext from "../contextApi/ProductContext";
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
-  
-  // FETCHING DATA FROM API
-  const [fetchedData, setFetchedData] = useState([]);
-  const fetchFromAPI = async () => {
-    const request = await axios.get("http://localhost:8080/allproducts");
-    const data = request.data;
-    setFetchedData(data);
-  };
-  useEffect(() => {
-    fetchFromAPI();
-  }, []);
+  const {fetchedData} = useContext(ProductContext)  
+  console.log(fetchedData)
 
   // SORTING FILTERED DATA FROM API AND USING SEARCH VALUE AS A DEPENDENCY TO AVOID INFITE RE-RENDER
   const [filteredData,setFilteredData] = useState([])
   function filterProducts(){
-    setFilteredData(fetchedData.filter((item)=>(item.product.includes(searchValue) || item.category.includes(searchValue) )));
+    setFilteredData(fetchedData?.filter((item)=>(item.product.includes(searchValue) || item.category.includes(searchValue) )));
     console.log(filteredData)
   }
   useEffect(()=>{
