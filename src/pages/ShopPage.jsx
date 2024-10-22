@@ -47,8 +47,9 @@ const ShopPage = () => {
         <div className="my-5 border-2  py-4 px-2 min-h-[60vh]   rounded-3xl ">
           {productData.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-              {handleFilter().map((product) => (
+              {handleFilter().map((product,index) => (
                 <ProductCard
+                  key={index}
                   img={product?.thumbnail}
                   title={product?.product}
                   price={product.price}
