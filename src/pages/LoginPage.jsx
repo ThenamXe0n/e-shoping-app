@@ -1,75 +1,111 @@
-import React from 'react'
+import React from "react";
+import logo from "../Assets/logo-eShop.svg";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { Navigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const { register, handleSubmit } = useForm();
+  let isLoggedIn = localStorage.getItem("logginStatus");
+  async function handleUserLogin({ userId, password }) {
+    const response = await axios.get(
+      `http://localhost:8080/Users?userId=${userId}`
+    );
+    const userData = response.data[0];
+    const isExisit = response.data.length;
+    if (isExisit != 0) {
+      if (userData?.password === password) {
+        alert("logged in successfully");
+        delete userData.password;
+        localStorage.setItem("userDetail", JSON.stringify(userData));
+        localStorage.setItem("logginStatus", true);
+        return;
+      }
+    } else {
+      alert("user not found!");
+    }
+    alert("invalid credentials! ");
+  }
+  console.log(isLoggedIn);
   return (
     <div>
-      
-      <div className="mx-auto flex w-96 flex-col space-y-5 rounded-lg border px-5 py-10 shadow-xl">
-        <div className="mx-auto mb-2 space-y-3">
-          <h1 className="text-3xl font-bold text-gray-700">Hello Again!</h1>
-          <p className="text-gray-500">Login to access your account</p>
-        </div>
-        <div>
-          <div className="relative mt-2 w-full">
-            <input
-              type="text"
-              id="email"
-              className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-              placeholder=" "
-            />
-            <label
-              htmlFor="email"
-              className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
-            >
-              
-              Enter Your Email
-            </label>
+      {isLoggedIn ? (
+        <Navigate to={"/"} />
+      ) : (
+        <form
+          onSubmit={handleSubmit(handleUserLogin)}
+          className="mx-auto flex w-96 flex-col items-center space-y-5 rounded-lg border px-5 py-10 shadow-xl"
+        >
+          <div className="flex flex-col items-center">
+            <img src={logo} alt="logo" />
+            <h1 className="text-3xl font-bold text-gray-700 mx-auto">
+              User Login
+            </h1>
+            {/* <p className="text-gray-500">Login to access your account</p> */}
           </div>
-        </div>
-        <div>
-          <div className="relative mt-2 w-full">
-            <input
-              type="text"
-              id="password"
-              className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-              placeholder=" "
-            />
-            <label
-              htmlFor="password"
-              className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
-            >
-            
-              Enter Your Password
-            </label>
+          <div className="w-full">
+            <div className="relative mt-2 w-full">
+              <input
+                type="text"
+                {...register("userId")}
+                id="email"
+                className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label
+                htmlFor="email"
+                className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
+              >
+                Enter Your Email
+              </label>
+            </div>
           </div>
-        </div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <input
-              id="remember_me"
-              name="remember_me"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-            <label
-              htmlFor="remember_me"
-              className="ml-2 block text-sm text-gray-900"
-            >
-              
-              Remember me
-            </label>
+          <div className="w-full">
+            <div className="relative mt-2 w-full">
+              <input
+                type="text"
+                id="password"
+                {...register("password")}
+                className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label
+                htmlFor="password"
+                className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
+              >
+                Enter Your Password
+              </label>
+            </div>
           </div>
-          <div className="text-sm">
-            <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-              
-              Forgot your password?
-            </a>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                id="remember_me"
+                name="remember_me"
+                type="checkbox"
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label
+                htmlFor="remember_me"
+                className="ml-2 block text-sm text-gray-900"
+              >
+                Remember me
+              </label>
+            </div>
+            <div className="text-sm">
+              <a
+                href="#"
+                className="font-medium text-blue-600 hover:text-blue-500"
+              >
+                Forgot your password?
+              </a>
+            </div>
           </div>
-        </div>
-        <button className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
-          <span className="ml-4"> Login </span>
-        </button>
-        <button className="focus:shadow-outline flex w-full max-w-xs items-center justify-center rounded-lg bg-indigo-100 py-3 font-bold text-gray-800 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
+          <button className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
+            <span className="ml-4"> Login </span>
+          </button>
+          {/* <button className="focus:shadow-outline flex w-full max-w-xs items-center justify-center rounded-lg bg-indigo-100 py-3 font-bold text-gray-800 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
           <div className="rounded-full bg-white p-2">
             <svg className="w-3" viewBox="0 0 533.5 544.3">
               <path
@@ -91,16 +127,19 @@ const LoginPage = () => {
             </svg>
           </div>
           <span className="ml-4"> Sign in with Google </span>
-        </button>
-        <div className="mt-8">
-          <p className="text-indigo-700 hover:text-pink-700 text-sm">
-            Already have an account <link to='{"/login"}' />
-            <ins>click here</ins>
-          </p>
-        </div>
-      </div>
+        </button> */}
+          <div className="mt-8">
+            <p className="text-indigo-700 hover:text-pink-700 text-sm">
+              Already have an account{" "}
+              <Link to={"/sign-up"}>
+                <ins>click here</ins>
+              </Link>
+            </p>
+          </div>
+        </form>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;

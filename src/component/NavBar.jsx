@@ -7,6 +7,7 @@ import axios from "axios";
 import ProductContext from "../contextAPI/ProductContext";
 
 const NavBar = () => {
+  let isLoggedIn = localStorage.getItem("logginStatus")
   const {product} = useContext(ProductContext);
   const [profileOpen, setProfileOpen] = useState(false);
   const [searchedProduct, setSearchedProduct] = useState(null);
@@ -82,8 +83,9 @@ console.log(product)
       </div>
 
       <div id="profile-opt" className="flex items-center font-medium">
-        <button className="py-1 px-4 rounded-xl">Login</button>
-        <div>
+       {!isLoggedIn ?(<Link to={"/login"}> <button className="py-1 px-4 rounded-xl">Login</button></Link>):(
+       <Link to={"/login"} onClick={()=>{let ask = window.confirm("are you sure?");ask && localStorage.clear()}}> <button className="py-1 px-4 rounded-xl">Logout</button></Link>
+       )} <div>
           <button
             className="py-1 px-4 rounded-xl "
             onClick={() => {

@@ -1,11 +1,28 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductContext from "../contextAPI/ProductContext";
 const ProductDetailsPage = () => {
-  const {product} = useContext(ProductContext)
+  const { product } = useContext(ProductContext);
+  const userInfo = JSON.parse(localStorage.getItem("userDetails"));
+  const navigate = useNavigate();
   const { name } = useParams();
   const [selectedProduct, setSelectedProduct] = useState({});
+  let userData= {
+    cartProduct: selectedProduct,
+    totalAmount: 6456456,
+    userId: userInfo?.userId,
+  };
+  async function handleAddToCart(data) {
+    const isLoggedIn = localStorage.getItem("logginStatus");
+    
+    if (isLoggedIn) {
+      const response = await axios.post("http://localhost:8080/Cart", data);
+      alert("added to cart");
+      return;
+    }
+    navigate("/login");
+  }
 
   const getSeletedProductDetails = async () => {
     try {
@@ -13,7 +30,7 @@ const ProductDetailsPage = () => {
         `http://localhost:8080/allproducts?product=${name}`
       );
       setSelectedProduct(response.data[0]);
-      setSelectedImage(response.data[0].thumbnail)
+      setSelectedImage(response.data[0].thumbnail);
     } catch (err) {
       console.log(err.message);
     }
@@ -24,7 +41,9 @@ const ProductDetailsPage = () => {
   }, []);
 
   // console.log(Products);
-  const [selectedImage, setSelectedImage] = useState(selectedProduct?.thumbnail);
+  const [selectedImage, setSelectedImage] = useState(
+    selectedProduct?.thumbnail
+  );
   return (
     <>
       <div className="grid-cols-2 grid">
@@ -62,7 +81,10 @@ const ProductDetailsPage = () => {
             <button className="border px-3 bg-gray-200 py-1">-</button>
             <span className="border px-3 py-1">Value</span>
             <button className="border px-3 bg-gray-200 py-1">+</button>
-            <button className="mx-5 bg-[#24333e] py-1 px-3 text-white font-semibold">
+            <button
+              onClick={()=>{handleAddToCart(userData)}}
+              className="mx-5 bg-[#24333e] py-1 px-3 text-white font-semibold"
+            >
               Add to cart
             </button>
           </div>
