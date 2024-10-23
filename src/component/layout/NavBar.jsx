@@ -42,7 +42,7 @@ const NavBar = () => {
       <div id="profile-opt" className="flex items-center font-medium ">
         <div className="profile">
           <FaRegUser
-            className="text-2xl hover:text-gray-400 duration-300 hover:cursor-pointer"
+            className="text-2xl hover:text-gray-400 hover:cursor-pointer"
             onClick={() => {
               setProfileOpen(!profileOpen);
             }}

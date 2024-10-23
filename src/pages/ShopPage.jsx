@@ -46,11 +46,11 @@ const ShopPage = () => {
           </div>
         </div>
         {/* ----------------------product section--------------- */}
-        <div className="my-5 border-2 py-4 px-2 min-h-[60vh] rounded-3xl">
+        <div className="my-4 border-2 p-2 min-h-[60vh] flex justify-center rounded-3xl">
           {productData.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {handleFilter().map((product, index) => (
-                <Link to={`/product/${product.product}`}>
+                <Link className="h-full" to={`/product/${product.product}`}>
                   <ProductCard
                     key={index}
                     img={product?.thumbnail}
@@ -63,9 +63,9 @@ const ShopPage = () => {
               ))}
             </div>
           ) : (
-            <div className="text-5xl font-extrabold flex items-center justify-center h-full ">
+            <h4 className="text-5xl h-full font-extrabold text-center">
               No Product Found!
-            </div>
+            </h4>
           )}
         </div>
       </section>

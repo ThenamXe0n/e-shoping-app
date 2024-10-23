@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="flex flex-col m-2 items-center justify-center">
       <img className="h-[60%]" src={product?.thumbnail} alt="Product" />
-      <h2 className="mt-1 uppercase text-center text-2xl font-semibold">
+      <h2 className="mt-1 uppercase text-center text-xl font-semibold">
         {product?.product}
       </h2>
       <p className="text-gray-600 text-xl">${product?.finalprice}</p>
@@ -16,8 +16,9 @@ const ProductCard = ({ product }) => {
 
 const ProductDisplaySection = () => {
   const { fetchedData } = useContext(ProductContext);
-  const startProduct = Math.floor(Math.random() * fetchedData.length - 5);
+  const startProduct = Math.floor(Math.random() * (fetchedData.length - 5));
   const endProduct = startProduct + 5;
+  console.log(`Starting ${startProduct} Ending ${endProduct}`)
   const featuredProducts = fetchedData.slice(startProduct, endProduct);
 
   return (

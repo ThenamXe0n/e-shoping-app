@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductSlider from '../component/ProductSlider'
+import ProductSlider from '../component/uiComponets/ProductSlider'
 import FeatureCard from '../component/uiComponets/FeatureCard'
 import ProductDisplaySection from '../component/uiComponets/ProductDisplaySection'
 
