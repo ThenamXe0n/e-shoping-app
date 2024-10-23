@@ -1,31 +1,32 @@
+import { Link } from "react-router-dom";
+
 const LoginPage = () => {
   return (
-    <div>
-      
-      <div className="mx-auto flex w-96 flex-col space-y-5 rounded-lg border px-5 py-10 shadow-xl">
-        <div className="mx-auto mb-2 space-y-3">
-          <h1 className="text-3xl font-bold text-gray-700">Hello Again!</h1>
+    <div className="flex w-full min-h-[80vh] items-center justify-center">
+      <div
+        id="main"
+        className="m-auto flex h-fit px-5 py-10 flex-col items-center w-[95%] lg:max-w-[50%]  justify-center rounded-lg border shadow-xl text-center"
+      >
+        <div id="heading" className="flex items-center flex-col my-4">
+          <h1 className="text-3xl font-bold text-gray-700">Sign In</h1>
           <p className="text-gray-500">Login to access your account</p>
         </div>
-        <div>
-          <div className="relative mt-2 w-full">
+        <form className="w-full">
+          <div className="relative mt-2 w-full md:w-1/2 md:mx-auto">
             <input
-              type="text"
-              id="email"
+              type="number"
+              id="user-number"
               className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label
-              htmlFor="email"
+              htmlFor="user-number"
               className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
             >
-              
-              Enter Your Email
+              Enter Your 10 digit Mobile Number
             </label>
           </div>
-        </div>
-        <div>
-          <div className="relative mt-2 w-full">
+          <div className="relative mt-2 w-full md:w-1/2 md:mx-auto">
             <input
               type="text"
               id="password"
@@ -36,38 +37,35 @@ const LoginPage = () => {
               htmlFor="password"
               className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
             >
-            
               Enter Your Password
             </label>
           </div>
-        </div>
-        <div className="flex items-center justify-between">
+        </form>
+        <div className="flex w-full items-center my-2 justify-center gap-10">
           <div className="flex items-center">
             <input
               id="remember_me"
               name="remember_me"
               type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
             />
             <label
               htmlFor="remember_me"
               className="ml-2 block text-sm text-gray-900"
             >
-              
               Remember me
             </label>
           </div>
-          <div className="text-sm">
-            <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-              
-              Forgot your password?
-            </a>
-          </div>
+          <div className="text-sm">Forgot your password?</div>
         </div>
-        <button className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
+
+        {/* Login Button */}
+        <button className="bg-indigo-100 focus:shadow-outline my-2 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
           <span className="ml-4"> Login </span>
         </button>
-        <button className="focus:shadow-outline flex w-full max-w-xs items-center justify-center rounded-lg bg-indigo-100 py-3 font-bold text-gray-800 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
+
+        {/* SignIn With Google */}
+        {/* <button className="focus:shadow-outline flex w-full max-w-xs items-center justify-center rounded-lg bg-indigo-100 py-3 font-bold text-gray-800 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
           <div className="rounded-full bg-white p-2">
             <svg className="w-3" viewBox="0 0 533.5 544.3">
               <path
@@ -89,16 +87,17 @@ const LoginPage = () => {
             </svg>
           </div>
           <span className="ml-4"> Sign in with Google </span>
-        </button>
-        <div className="mt-8">
-          <p className="text-indigo-700 hover:text-pink-700 text-sm">
-            Already have an account <link to='{"/login"}' />
-            <ins>click here</ins>
-          </p>
+        </button> */}
+        <div className="my-2">
+          <Link to="/register">
+            <p className="text-indigo-700 hover:text-pink-700 text-sm">
+              Don't have an account?
+            </p>
+          </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;

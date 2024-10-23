@@ -5,6 +5,7 @@ import Layout from "./component/layout/Layout";
 import ProductPage from "./pages/ProductPage";
 import ShopPage from "./pages/ShopPage";
 import LoginPage from "./pages/LoginPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="test" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
           <Route path="product" element={<ShopPage />} />
           <Route path="product/:name" element={<ProductPage />} />
         </Route>
