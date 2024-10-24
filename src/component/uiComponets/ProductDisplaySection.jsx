@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import ProductContext from "../contextApi/ProductContext";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const { fetchedData } = useContext(ProductContext);
@@ -22,9 +23,11 @@ const ProductDisplaySection = () => {
   const featuredProducts = fetchedData.slice(startProduct, endProduct);
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 p-5 border-2 mx-auto border-gray-400 bg-white rounded-lg my-4 w-[80vw] min-h-[50vh]">
+    
+    <div className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 p-5 border-2 mx-auto border-gray-400 bg-white rounded-lg my-4 w-[80vw] min-h-fit">
+      <h1 className="text-center font-[cursive] h-fit lg:h-9 text-3xl font-semibold col-span-full">Featured Products!</h1>
       {featuredProducts.map((item, index) => (
-        <ProductCard key={index} product={item} />
+        <Link to={`/product/${item?.product}`}><ProductCard key={index} product={item} /></Link>
       ))}
     </div>
   );
