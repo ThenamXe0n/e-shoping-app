@@ -1,7 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const RegistrationPage = () => {
   const {
@@ -52,7 +52,7 @@ const RegistrationPage = () => {
     if (goToLogin) {
       window.location.pathname = "/login";
     } else reset();
-  }  
+  }
 
   return (
     <div className="flex w-full min-h-[80vh] items-center justify-center">
@@ -94,8 +94,11 @@ const RegistrationPage = () => {
             <input
               {...register("mobile", {
                 required: { value: true, message: "Phone Number is required" },
-                maxLength: { value: 10, message: "Please Check the number" },
-                minLength: { value: 10, message: "Please Check the number" },
+                pattern: {
+                  value:
+                    /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/gim,
+                  message: "Incorrect Phone Number",
+                },
               })}
               type="number"
               id="mobile"
@@ -118,6 +121,7 @@ const RegistrationPage = () => {
             <input
               {...register("email", {
                 required: { value: true, message: "Email is required" },
+                
               })}
               type="email"
               id="email"
@@ -137,6 +141,12 @@ const RegistrationPage = () => {
             <input
               {...register("password", {
                 required: { value: true, message: "Password is required" },
+                pattern: {
+                  value:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/gim,
+                  message:
+                    "At least one lowercase alphabet i.e. [a-z],uppercase alphabet i.e. [A-Z],At least one Numeric digit i.e. [0-9],At least one special character ,Also, the total length must be in the range [8-15]",
+                },
               })}
               type="password"
               id="password"
@@ -145,20 +155,26 @@ const RegistrationPage = () => {
           </div>
           <div className="my-1 w-full md:w-3/4 lg:w-1/2 md:mx-auto">
             <label
-              htmlFor="confirm-password"
+              htmlFor="confirmPassword"
               className="cursor-text text-sm text-gray-500"
             >
               Re-enter Password
             </label>
             <span className="text-red-500 ml-7">
-              <ErrorMessage errors={errors} name="password" />
+              <ErrorMessage errors={errors} name="confirmPassword" />
             </span>
             <input
               {...register("confirmPassword", {
                 required: { value: true, message: "Password is required" },
+                pattern: {
+                  value:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/gim,
+                  message:
+                    "At least one lowercase alphabet i.e. [a-z],uppercase alphabet i.e. [A-Z],At least one Numeric digit i.e. [0-9],At least one special character ,Also, the total length must be in the range [8-15]",
+                },
               })}
               type="password"
-              id="confirm-password"
+              id="confirmPassword"
               className="border-1 rounded-lg w-full border border-gray-300 bg-transparent p-2.5 focus:border-blue-600 focus:outline-none focus:ring-0"
             />
           </div>
@@ -167,7 +183,7 @@ const RegistrationPage = () => {
           <div className="flex w-full justify-center my-2 ">
             <div className="flex items-center">
               <input
-              required
+                required
                 id="tnc"
                 type="checkbox"
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
