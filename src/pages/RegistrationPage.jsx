@@ -1,7 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const RegistrationPage = () => {
   const {
@@ -10,6 +10,7 @@ const RegistrationPage = () => {
     formState: { errors },
     reset,
   } = useForm();
+  const isLoggedIn = localStorage.getItem("isLoggedIn")
 
   //1) Form Response is first Send here
   async function registerUser(submitData) {
@@ -56,7 +57,7 @@ const RegistrationPage = () => {
 
   return (
     <div className="flex w-full min-h-[80vh] items-center justify-center">
-      <form
+      {isLoggedIn ? <Navigate to={"/"}/> :(<form
         onSubmit={handleSubmit(registerUser)}
         id="main"
         className="m-auto flex h-fit p-5 flex-col items-center w-[95%] lg:max-w-[50%]  justify-center rounded-lg border shadow-xl"
@@ -208,7 +209,7 @@ const RegistrationPage = () => {
             Already have an account?
           </p>
         </Link>
-      </form>
+      </form>)}
     </div>
   );
 };

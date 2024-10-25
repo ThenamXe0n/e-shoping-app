@@ -50,9 +50,9 @@ const ShopPage = () => {
           {productData.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {handleFilter().map((product, index) => (
-                <Link className="h-fit" to={`/product/${product.product}`}>
+                <Link key={index} className="h-fit" to={`/product/${product.product}`}>
                   <ProductCard
-                    key={index}
+                    
                     img={product?.thumbnail}
                     title={product?.product}
                     price={product?.price}

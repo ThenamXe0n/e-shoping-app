@@ -455,14 +455,14 @@
       "name": "Demo User",
       "mobile": "9999988888",
       "email": "demo@gmail.com",
-      "password": "12345678"
+      "password": "Demo@1234"
     },
     {
       "id": "6a2c",
       "name": "Luv Agrawal",
       "mobile": "9302031000",
       "email": "LuvAgrawal@gmail.com",
-      "password": "Abc1234"
+      "password": "Abc@1234"
     }
   ]
 }
