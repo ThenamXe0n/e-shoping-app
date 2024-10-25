@@ -76,7 +76,7 @@ const LoginPage = () => {
             </div>
             <div className="relative my-4 w-full md:w-3/4 lg:w-1/2 md:mx-auto">
               <input
-                type="text"
+                type="password"
                 id="password"
                 {...register("password", {
                   required: { value: true, message: "Enter Password" },

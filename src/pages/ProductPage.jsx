@@ -1,15 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import ProductContext from "../component/contextApi/ProductContext";
 const ProductPage = () => {
   const { fetchedData } = useContext(ProductContext);
   const { name } = useParams();
-
+  
   let selectedProduct = fetchedData.find((item) => item.product.includes(name));
-  const [selectedImage, setSelectedImage] = useState(
-    selectedProduct?.thumbnail
-  );
-  console.log(selectedProduct);
+  console.log(selectedProduct)
 
   return (
     <>
@@ -17,30 +14,30 @@ const ProductPage = () => {
         <div className="md:p-4 m-2 overflow-hidden">
           <div className="flex justify-center">
             <img
-              src={selectedImage}
+              src={selectedProduct?.thumbnail}
               className="h-60 md:h-80"
               alt="main Product"
             />
           </div>
           <div className="flex my-3 gap-4 overflow-auto border-2 border-gray-400 bg-white rounded-lg">
-            {/* {selectedProduct &&
+            {selectedProduct?.images.length > 0 ?
               selectedProduct?.images?.map((imageSrc, i) => (
                 <img
-                  onClick={(e) => setSelectedImage(e.target.src)}
+                  // onClick={(e) => setSelectedImage(e.target.src)}
                   key={i}
                   className="h-32"
                   src={imageSrc}
                   alt="main Product"
                 />
-              ))} */}
+              )) : <></>}
           </div>
         </div>
-        <div className="md:p-4 flex flex-col items-center justify-center md:m-2">
+        <div className="md:p-4 flex flex-col items-center justify-center md:m-2 md:max-w-sm">
           <h2 className="text-4xl uppercase text-center font-bold">
             {selectedProduct?.product}
           </h2>
           <div className="text-center">
-            <span className="">{selectedProduct?.discription}</span>
+            <span className="text-sm text-gray-600">{selectedProduct?.discription}</span>
             <span className="my-1 block">
               <strong>Category: </strong>
               {selectedProduct?.category}

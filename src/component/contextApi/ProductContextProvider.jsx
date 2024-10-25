@@ -9,6 +9,7 @@ const ProductContextProvider = ({ children }) => {
     const request = await axios.get("http://localhost:8080/allproducts");
     const data = request.data;
     setFetchedData(data);
+    // console.log("Data Fetching from API Running...")
   };
   useEffect(() => {
     fetchFromAPI();

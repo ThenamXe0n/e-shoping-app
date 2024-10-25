@@ -51,7 +51,7 @@ const SearchBar = () => {
                     </div>
                     <div id="user-info">
                       <p>{item?.product}</p>
-                      <p className="text-sm font-thin">₹{item?.price}</p>
+                      <p className="text-sm font-thin">₹{item?.finalprice}</p>
                     </div>
                   </li>
                 </Link>
