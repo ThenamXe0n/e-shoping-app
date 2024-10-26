@@ -16,23 +16,34 @@ const NewProductPage = () => {
   const filterCategory = [...new Set(fetchedData.map((item) => item.category))];
 
   //1) Form Response is first Send here
-  async function registerProduct(submitData) {
-    // console.log(submitData);
+  function registerProduct(submitData) {
     formValidation(submitData);
   }
 
   //2) Form Validation if user already doesn't exist
   function formValidation(formData) {
-    const discountAmount = formData.price- formData.finalprice;
-    const discountPercent = Math.round((discountAmount/formData.price)*100)
-    
+    const price = parseInt(formData.price);
+    let finalprice = parseInt(formData.finalprice);
+
+    while (price < finalprice) {
+      finalprice = parseInt(
+        prompt(`Sale price Can not be more than MRP ${price}`)
+      );
+    }
+
+    // ADDING DISCOUNT VALUES
+    const discountAmount = price - finalprice
+    const discountPercent = (discountAmount/price)*100
     const productCreationMeta = {
       creationDate: new Date(),
       images: [],
+      price: price,
+      finalprice: finalprice,
       discountAmount: discountAmount,
-      discountPercent: discountPercent
+      discountPercent: discountPercent,
     };
     const finalProduct = { ...formData, ...productCreationMeta };
+    // console.log(finalProduct);
     postProduct(finalProduct);
   }
 
@@ -43,7 +54,9 @@ const NewProductPage = () => {
     const registerMore = window.confirm(
       "Registration Successfull! Do You want to Register More?"
     );
-    registerMore ? reset() : window.location.pathname=`/product/${data.product}`
+    registerMore
+      ? reset()
+      : (window.location.pathname = `/product/${data.product}`);
   }
 
   return (
@@ -171,7 +184,9 @@ const NewProductPage = () => {
                 Enter MRP
               </label>
               <input
-                {...register("price")}
+                {...register("price", {
+                  required: { value: true, message: "MRP is required" },
+                })}
                 type="number"
                 min={0}
                 id="initialPrice"
