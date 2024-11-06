@@ -29,7 +29,7 @@ const ShopPage = () => {
   }, [fetchedData, rangeVal]);
 
   return (
-    <section className="p-4 lg:flex">
+    <section className="p-4 lg:flex lg:justify-around">
       <div id="filter-section" className="lg:mt-20 lg:p-2 m-4">
         <h3 className="text-center text-xl font-bold">Filter By Price</h3>
         <input

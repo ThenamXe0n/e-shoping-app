@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
         src={product?.thumbnail}
         alt="Product"
       />
-      <span className="bg-red-600 p-1 text-sm items-start mt-5 text-white">
+      <span className="bg-red-600 p-1 rounded-sm text-sm items-start mt-5 text-white">
         {discountCalculator(product.price, product.finalprice)}% off!
       </span>
       <h2 className="mt-1 uppercase text-center text-xl font-semibold">
