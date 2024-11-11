@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../Assets/logo-eShop.svg";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 const LoginPage = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,reset } = useForm();
+  const [submitStatus,setSubmitStatus] = useState(false)
   let isLoggedIn = localStorage.getItem("logginStatus");
-  async function handleUserLogin({ userId, password }) {
-    const response = await axios.get(
-      `http://localhost:8080/Users?userId=${userId}`
-    );
-    const userData = response.data[0];
-    const isExisit = response.data.length;
-    if (isExisit != 0) {
-      if (userData?.password === password) {
-        alert("logged in successfully");
-        delete userData.password;
-        localStorage.setItem("userDetail", JSON.stringify(userData));
-        localStorage.setItem("logginStatus", true);
-        return;
+  let navigate = useNavigate()
+
+
+  async function handleLogin(data) {
+    setSubmitStatus(true)
+    console.log(data);
+    try {
+      const response = await axios.post(
+        "https://instructor-api-xi.vercel.app/api/login",
+        data
+      );
+      console.log(response.data);
+      if (response.data.status === "success") {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userInfo", JSON.stringify(response.data.userdata));
+        toast("loggedin successfully");
+        toast.success("loggedin successfully");
+        setSubmitStatus(false)
+        navigate("/user-profile")
       }
-    } else {
-      alert("user not found!");
+    } catch (err) {
+      toast.error("invalid credentials!");
+      setSubmitStatus(false)
+      reset()
     }
-    alert("invalid credentials! ");
   }
+  
+  useEffect(()=>{
+    let check = localStorage.getItem("token")
+    if(check.length){
+      navigate("/")
+    }
+  },[])
   console.log(isLoggedIn);
   return (
     <div>
@@ -34,7 +51,7 @@ const LoginPage = () => {
         <Navigate to={"/"} />
       ) : (
         <form
-          onSubmit={handleSubmit(handleUserLogin)}
+          onSubmit={handleSubmit(handleLogin)}
           className="mx-auto flex w-96 flex-col items-center space-y-5 rounded-lg border px-5 py-10 shadow-xl"
         >
           <div className="flex flex-col items-center">
@@ -48,7 +65,7 @@ const LoginPage = () => {
             <div className="relative mt-2 w-full">
               <input
                 type="text"
-                {...register("userId")}
+                {...register("email")}
                 id="email"
                 className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                 placeholder=" "
@@ -102,8 +119,8 @@ const LoginPage = () => {
               </a>
             </div>
           </div>
-          <button className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
-            <span className="ml-4"> Login </span>
+          <button disabled={submitStatus}  className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
+            <span className="ml-4"> {submitStatus ? "loading...":"Login"} </span>
           </button>
           {/* <button className="focus:shadow-outline flex w-full max-w-xs items-center justify-center rounded-lg bg-indigo-100 py-3 font-bold text-gray-800 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
           <div className="rounded-full bg-white p-2">

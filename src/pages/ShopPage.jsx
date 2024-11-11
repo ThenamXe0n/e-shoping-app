@@ -3,15 +3,16 @@ import ProductCard from "./ProductCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const ShopPage = () => {
+const ShopPage = ({product}) => {
   const [priceFilter,setPriceFilter] = useState(10000000000)
   const [productData, setProuductData] = useState([]);
 
   async function loadProducts() {
     try {
-      const res = await axios.get("http://localhost:8080/allproducts");
+      const res = await axios.get("https://instructor-api-xi.vercel.app/api/product/allproducts");
       const data = res.data;
-      setProuductData(data);
+      console.log(data)
+      setProuductData(data.product);
     } catch (error) {
       console.log(error.message);
     }
@@ -48,8 +49,8 @@ const ShopPage = () => {
         <div className="my-5 border-2  py-4 px-2 min-h-[60vh]   rounded-3xl ">
           {productData.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-              {handleFilter().map((product) => (
-               <Link to={`/product/${product.product}`}> <ProductCard
+              {productData.map((product) => (
+               <Link to={`/product/${product.product}`}> <ProductCard 
                   img={product?.thumbnail}
                   title={product?.product}
                   price={product.price}
