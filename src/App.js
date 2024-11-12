@@ -10,21 +10,21 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { useDispatch } from "react-redux";
 import { getProduct } from "./redux/productSlice";
+import NewProductPage from "./pages/NewProductPage";
 
 
 const App = () => {
   const [product, setProduct] = useState();
   const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getProduct())
-  },[])
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage product={product} />} />
+          <Route path="addproduct" element={<NewProductPage/>} />
           <Route path="/user-profile" element={<ProfilePage />} />
-          <Route path="/test" element={<Modal />} />
+          <Route path="/test" element={<Modal />} />~
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<RegisterPage />} />
           <Route path="product" element={<ShopPage />} />

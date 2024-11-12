@@ -1,5 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+
+export const getProductAsync = createAsyncThunk("fetchproduct", async () => {
+  const res = await axios.get(
+    "https://instructor-api-xi.vercel.app/api/product/allproducts"
+  );
+  const data = res.data;
+  return data;
+});
 
 const productSlice = createSlice({
   name: "product",
@@ -9,17 +17,23 @@ const productSlice = createSlice({
     limit: 0,
   },
   reducers: {
-    getProduct:  (state) => {
-    
-      let product = res.data.product;
-      state.product +=1;
+    getProduct: (state, action) => {
+      state.product = action.payload;
     },
-    addProduct:(state,action)=>{
-        state.product.push(action.payload.product);
-    }
+    addProduct: (state, action) => {
+      state.product.push(action.payload);
+    },
+    deleteProduct: (state, action) => {
+      state.product.splice(action.payload, 1);
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getProductAsync.fulfilled, (state, action) => {
+      state.product = action.payload.product;
+      state.totalProduct = action.payload.totalProducts
+    });
   },
 });
-export const { getProduct,addProduct } = productSlice.actions
+export const { getProduct, addProduct, deleteProduct, } = productSlice.actions;
 
-
-export default productSlice.reducer
+export default productSlice.reducer;
