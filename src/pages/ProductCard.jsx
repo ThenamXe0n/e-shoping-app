@@ -16,7 +16,7 @@ const ProductCard = ({ img, title, price, finalPrice, rating }) => {
           <img
             className="h-60 w-full object-contain rounded-t-lg"
             src={img}
-            alt="product image"
+            alt="product "
           />
         </div>
         <div id="details" className="p-2 rounded-lg">

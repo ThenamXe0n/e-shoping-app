@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Logo from "./logo-eShop.svg";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { NavList } from "../../Data/NavItemData";
 import { FaRegUser } from "react-icons/fa";
 import SearchBar from "../uiComponets/SearchBar";
