@@ -4,7 +4,7 @@ import { set, useForm } from "react-hook-form";
 import ProductCard from "./ProductCard";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, deleteProduct, getProduct, getProductAsync } from "../redux/productSlice";
+// import { addProduct, deleteProduct, getProduct, getProductAsync } from "../redux/product/productSlice";
 
 const NewProductPage = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,6 @@ const NewProductPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  console.log("p", product);
 
  
   useEffect(() => {

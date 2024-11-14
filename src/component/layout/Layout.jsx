@@ -3,7 +3,7 @@ import NavBar from '../NavBar'
 import Footer from '../Footer'
 import { Outlet } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { getProduct ,addProduct} from '../../redux/productSlice'
+// import { getProduct ,addProduct} from '../../redux/productSlice'
 const Layout = () => {
   const dispatch = useDispatch()
   return (

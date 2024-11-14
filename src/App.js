@@ -9,8 +9,9 @@ import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { useDispatch } from "react-redux";
-import { getProduct } from "./redux/productSlice";
 import NewProductPage from "./pages/NewProductPage";
+import CreateProductPage from "./redux/product/CreateProductPage";
+import Avatar from "./component/uiComponets/Avatar";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route index element={<HomePage product={product} />} />
           <Route path="addproduct" element={<NewProductPage/>} />
           <Route path="/user-profile" element={<ProfilePage />} />
+          <Route path="create" element={<CreateProductPage/>} />
           <Route path="/test" element={<Modal />} />~
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<RegisterPage />} />
