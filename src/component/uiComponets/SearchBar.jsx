@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
-import ProductContext from "../contextApi/ProductContext";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { fetchedData } = useContext(ProductContext);
+  const fetchedData = useSelector((state) => state.product.product);
   // console.log(fetchedData)
 
-  // SORTING FILTERED DATA FROM API AND USING SEARCH VALUE AS A DEPENDENCY TO AVOID INFITE RE-RENDER
+  // SORTING FILTERED DATA FROM API AND USING SEARCH VALUE AS A DEPENDENCY TO AVOID INFINITE RE-RENDER
   const [filteredData, setFilteredData] = useState([]);
   function filterProducts() {
     setFilteredData(
@@ -46,7 +46,7 @@ const SearchBar = () => {
               filteredData?.map((item) => (
                 <Link to={`/product/${item.product}`}>
                   <li className="text-black hover:bg-gray-400 duration-300 cursor-pointer flex p-2 items-center gap-4 border-2 rounded-lg">
-                    <div id="profile" className="size-12 rounded-full">
+                    <div id="profile" className="size-12 rounded-full overflow-hidden">
                       <img src={item?.thumbnail} alt="Product" />
                     </div>
                     <div id="user-info">

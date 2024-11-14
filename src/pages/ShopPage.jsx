@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
-import ProductContext from "../component/contextApi/ProductContext";
+// import ProductContext from "../component/contextApi/ProductContext";
+import { useSelector } from "react-redux";
 
 const ShopPage = () => {
-  const { fetchedData } = useContext(ProductContext);
+  const fetchedData = useSelector((state) => state.product.product);
   const [minVal, setMinVal] = useState(0);
   const [maxVal, setMaxVal] = useState(0);
   const [rangeVal, setRangeVal] = useState(0);

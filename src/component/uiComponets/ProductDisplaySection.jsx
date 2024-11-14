@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import ProductContext from "../contextApi/ProductContext";
+// import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function discountCalculator(mrp, sale) {
@@ -22,20 +22,21 @@ const ProductCard = ({ product }) => {
         {product?.product}
       </h2>
       <p className="text-gray-800 text-lg">
-        ₹{product?.finalprice}{" "}
         <span className="text-sm text-gray-500">
           M.R.P <span className="line-through"> ₹{product?.price}</span>
         </span>
+        ₹{product?.finalprice}
       </p>
     </div>
   );
 };
 
 const ProductDisplaySection = () => {
-  const { fetchedData } = useContext(ProductContext);
+  const fetchedData = useSelector((state) => state.product.product);
+  // console.log("redux:", fetchedData);
   const startProduct = Math.floor(Math.random() * (fetchedData.length - 5));
   const endProduct = startProduct + 5;
-  const featuredProducts = fetchedData.slice(startProduct, endProduct);
+  const featuredProducts = fetchedData?.slice(startProduct, endProduct);
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 p-5 border-2 mx-auto border-gray-400 bg-white rounded-lg my-4 w-[80vw] min-h-fit">

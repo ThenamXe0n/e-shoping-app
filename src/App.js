@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Layout from "./component/layout/Layout";
@@ -6,9 +6,16 @@ import ProductPage from "./pages/ProductPage";
 import ShopPage from "./pages/ShopPage";
 import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
-import NewProductPage from './pages/AdminPages/NewProductPage'
+import NewProductPage from "./pages/AdminPages/NewProductPage";
+import { useDispatch } from "react-redux";
+import { fetchAllProductsAsync } from "./redux/product/productSlice";
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAllProductsAsync());
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>

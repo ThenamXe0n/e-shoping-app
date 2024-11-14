@@ -1,16 +1,16 @@
-import React from 'react'
-import ProductSlider from '../component/uiComponets/ProductSlider'
-import FeatureCard from '../component/uiComponets/FeatureCard'
-import ProductDisplaySection from '../component/uiComponets/ProductDisplaySection'
+import React from "react";
+import ProductSlider from "../component/uiComponets/ProductSlider";
+import FeatureCard from "../component/uiComponets/FeatureCard";
+import ProductDisplaySection from "../component/uiComponets/ProductDisplaySection";
 
 const HomePage = () => {
   return (
     <>
-    <ProductSlider/>
-    <FeatureCard/>
-    <ProductDisplaySection/>
-   </>
-  )
-}
+      <ProductSlider />
+      <FeatureCard />
+      <ProductDisplaySection />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;
