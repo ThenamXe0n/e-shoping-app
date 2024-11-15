@@ -1,12 +1,13 @@
-import { useContext } from "react";
+// import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import ProductContext from "../component/contextApi/ProductContext";
+// import ProductContext from "../component/contextApi/ProductContext";
 const ProductPage = () => {
-  const { fetchedData } = useContext(ProductContext);
+  const fetchedData  = useSelector((state)=>state.product.product)
   const { name } = useParams();
-  
+
   let selectedProduct = fetchedData.find((item) => item.product.includes(name));
-  console.log(selectedProduct)
+  console.log(selectedProduct);
 
   return (
     <>
@@ -20,7 +21,7 @@ const ProductPage = () => {
             />
           </div>
           <div className="flex my-3 gap-4 overflow-auto border-2 border-gray-400 bg-white rounded-lg">
-            {selectedProduct?.images.length > 0 ?
+            {selectedProduct?.images.length > 0 ? (
               selectedProduct?.images?.map((imageSrc, i) => (
                 <img
                   // onClick={(e) => setSelectedImage(e.target.src)}
@@ -29,7 +30,10 @@ const ProductPage = () => {
                   src={imageSrc}
                   alt="main Product"
                 />
-              )) : <></>}
+              ))
+            ) : (
+              <></>
+            )}
           </div>
         </div>
         <div className="md:p-4 flex flex-col items-center justify-center md:m-2 md:max-w-sm">
@@ -37,13 +41,15 @@ const ProductPage = () => {
             {selectedProduct?.product}
           </h2>
           <div className="text-center">
-            <span className="text-sm text-gray-600">{selectedProduct?.discription}</span>
+            <span className="text-sm text-gray-600">
+              {selectedProduct?.discription}
+            </span>
             <span className="my-1 block">
               <strong>Category: </strong>
               {selectedProduct?.category}
             </span>
             <span className="text-2xl font-semibold">
-              ${selectedProduct?.finalprice}
+              ₹{selectedProduct?.finalprice}
             </span>
           </div>
           <div className="my-3 flex items-center">

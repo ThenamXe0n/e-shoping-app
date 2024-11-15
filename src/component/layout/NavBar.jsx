@@ -5,19 +5,17 @@ import { NavList } from "../../Data/NavItemData";
 import { FaRegUser } from "react-icons/fa";
 import SearchBar from "../uiComponets/SearchBar";
 import { IoIosMenu } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutLocal } from "../../redux/auth/authSlice";
 
 const NavBar = () => {
   const [profileOpen, setProfileOpen] = useState(false);
   const navDiv = useRef();
-  let isLoggedIn = window.localStorage.getItem("isLoggedIn");
-  const userInfo = JSON.parse(window.localStorage.getItem("userData"));
+  let isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const userInfo = useSelector((state) => state.auth.loggedInUserData);
 
   console.log(`LoginStatus: ${isLoggedIn}`);
-  function logOut() {
-    localStorage.removeItem("userData");
-    localStorage.removeItem("isLoggedIn");
-    isLoggedIn = false;
-  }
+  const dispatch = useDispatch();
 
   return (
     <header className="h-fit flex items-center md:justify-around justify-between bg-blue-600 sticky top-0 z-50 text-xl py-3 text-white rounded-b shadow-2xl">
@@ -82,9 +80,11 @@ const NavBar = () => {
                       </span>
                       <span
                         className="block text-end cursor-pointer text-sm hover:text-gray-600"
-                        onClick={logOut}
+                        onClick={() => {
+                          dispatch(logoutLocal());
+                        }}
                       >
-                        <Link to=''>Logout</Link>
+                        <Link to="">Logout</Link>
                       </span>
                     </div>
                   </div>

@@ -1,13 +1,13 @@
 import { GoStarFill } from "react-icons/go";
 
 const ProductCard = ({ img, title, price, finalPrice, rating }) => {
-  const stars=[]
+  const stars = [];
   const ratingProducer = () => {
-    for (let i = 0; i <rating; i++) {
+    for (let i = 0; i < rating; i++) {
       stars.push(<GoStarFill fill="yellow" key={i} />);
     }
   };
-  ratingProducer()
+  ratingProducer();
 
   return (
     <>
@@ -25,15 +25,19 @@ const ProductCard = ({ img, title, price, finalPrice, rating }) => {
           </h5>
           <div className="rating-price flex items-center justify-between mt-4">
             <div id="rating" className="flex items-center">
-              <div className="flex items-center space-x-1 rtl:space-x-reverse">{stars}</div>
+              <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                {stars}
+              </div>
               <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
                 {rating}
               </span>
             </div>
             <div id="price" className="">
-              <span className="text-xl font-bold line-through">${price}</span>
+              <span className="text-xl font-bold line-through text-gray-700">
+                ₹{price}
+              </span>
               <span className="text-2xl font-bold text-white">
-                ${finalPrice}
+                ₹{finalPrice}
               </span>
             </div>
           </div>

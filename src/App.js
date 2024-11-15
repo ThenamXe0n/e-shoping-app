@@ -9,10 +9,12 @@ import RegistrationPage from "./pages/RegistrationPage";
 import NewProductPage from "./pages/AdminPages/NewProductPage";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAsync } from "./redux/product/productSlice";
+import { getFromLocal } from "./redux/auth/authSlice";
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getFromLocal())
     dispatch(fetchAllProductsAsync());
   }, []);
 
