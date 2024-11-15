@@ -12,17 +12,24 @@ import { useDispatch } from "react-redux";
 import NewProductPage from "./pages/NewProductPage";
 import CreateProductPage from "./redux/product/CreateProductPage";
 import Avatar from "./component/uiComponets/Avatar";
+import { fetchProductAsync } from "./redux/product/productSlice";
+import { loadLoggedInUser } from "./redux/user/userSlice";
 
 
 const App = () => {
   const [product, setProduct] = useState();
   const dispatch = useDispatch()
 
+  useEffect(()=>{
+    // dispatch(fetchProductAsync())
+    dispatch(loadLoggedInUser())
+  },[])
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage product={product} />} />
+          <Route index element={<HomePage />} />
           <Route path="addproduct" element={<NewProductPage/>} />
           <Route path="/user-profile" element={<ProfilePage />} />
           <Route path="create" element={<CreateProductPage/>} />

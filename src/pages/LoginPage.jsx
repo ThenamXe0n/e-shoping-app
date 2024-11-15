@@ -1,50 +1,26 @@
 import React, { useEffect, useState } from "react";
 import logo from "../Assets/logo-eShop.svg";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logginUserAsync } from "../redux/user/userSlice";
 
 const LoginPage = () => {
-  const { register, handleSubmit,reset } = useForm();
-  const [submitStatus,setSubmitStatus] = useState(false)
-  let isLoggedIn = localStorage.getItem("logginStatus");
-  let navigate = useNavigate()
-
+  const { register, handleSubmit, reset } = useForm();
+  const dispatch = useDispatch();
+  const [submitStatus, setSubmitStatus] = useState(false);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  let navigate = useNavigate();
 
   async function handleLogin(data) {
-    setSubmitStatus(true)
+    setSubmitStatus(true);
     console.log(data);
-    try {
-      const response = await axios.post(
-        "https://instructor-api-xi.vercel.app/api/login",
-        data
-      );
-      console.log(response.data);
-      if (response.data.status === "success") {
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("userInfo", JSON.stringify(response.data.userdata));
-        toast("loggedin successfully");
-        toast.success("loggedin successfully");
-        setSubmitStatus(false)
-        navigate("/user-profile")
-      }
-    } catch (err) {
-      toast.error("invalid credentials!");
-      setSubmitStatus(false)
-      reset()
-    }
+    dispatch(logginUserAsync(data));
   }
-  
-  useEffect(()=>{
-    let check = localStorage.getItem("token")
-    if(check.length){
-      navigate("/")
-    }
-  },[])
-  console.log(isLoggedIn);
+
   return (
     <div>
       {isLoggedIn ? (
@@ -119,8 +95,14 @@ const LoginPage = () => {
               </a>
             </div>
           </div>
-          <button disabled={submitStatus}  className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
-            <span className="ml-4"> {submitStatus ? "loading...":"Login"} </span>
+          <button
+            disabled={submitStatus}
+            className="bg-indigo-100 focus:shadow-outline mt-5 flex w-full max-w-xs items-center justify-center rounded-lg py-3 font-bold text-gray-900 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow"
+          >
+            <span className="ml-4">
+              {" "}
+              {submitStatus ? "loading..." : "Login"}{" "}
+            </span>
           </button>
           {/* <button className="focus:shadow-outline flex w-full max-w-xs items-center justify-center rounded-lg bg-indigo-100 py-3 font-bold text-gray-800 shadow-sm transition-all duration-300 ease-in-out focus:shadow-sm focus:outline-none hover:shadow">
           <div className="rounded-full bg-white p-2">

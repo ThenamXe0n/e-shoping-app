@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import ProductContext from "../../contextAPI/ProductContext";
+import { useSelector } from "react-redux";
 
 const ProductCard = ({ productData }) => {
   return (
@@ -12,7 +13,7 @@ const ProductCard = ({ productData }) => {
 };
 
 const ProductDisplaySection = () => {
-  const { product } = useContext(ProductContext);
+  const  product = useSelector((state)=>state.product.products);
   const startProduct = Math.floor(Math.random() * product.length - 5);
   const endProduct = startProduct + 5;
   const featuredProducts = product.slice(startProduct, endProduct);
@@ -25,7 +26,7 @@ const ProductDisplaySection = () => {
         <h1 className="w-fit lg:col-span-5 mx-auto font-semibold bg-orange-400 rounded-tl-xl rounded-br-xl shadow-2xl shadow-gray-600 py-1 px-2 text-white my-4">
           Featured Products
         </h1>
-        {featuredProducts.map((item) => (
+        {product.slice(0,6).map((item) => (
           <ProductCard productData={item} />
         ))}
       </div>

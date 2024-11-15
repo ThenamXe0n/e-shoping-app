@@ -3,39 +3,29 @@ import logo from "../Assets/logo-eShop.svg";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link ,Navigate} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUserAsync } from "../redux/user/userSlice";
 
 
 const RegisterPage = () => {
-    const[showPassword,setShowPassword] = useState(true)
-    const passwordRef = useRef()
-    const {register,handleSubmit,reset} = useForm()
-    const registerUser = async(data) => {
-        console.log(data)
-
-        const getUser = await axios.get(`http://localhost:8080/Users?userId=${data.userId}`)
-     console.log("isExisit",getUser)
-     if(getUser.data?.length>0){
-      alert("User already exist")
-      return
-     }
-
-        const response = await axios.post("http://localhost:8080/Users",data)
-        if(response.status){
-            window.alert("registered successfully")
-            reset()
-        }else{
-            window.alert("something went wrong , please try after some time")
-        }
-        
-
-    }
-    
-
+  const dispatch = useDispatch();
+  const isRegister = useSelector((state)=>state.user.isRegistered)
+  console.log("register status",isRegister)
+  const [showPassword, setShowPassword] = useState(true);
+  const passwordRef = useRef();
+  const { register, handleSubmit, reset } = useForm();
+  const registerUser = async (data) => {
+    console.log(data);
+    dispatch(registerUserAsync(data));
+  };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(registerUser)} className="mx-auto flex w-96 flex-col items-center space-y-5 rounded-lg border px-5 py-10 shadow-xl">
+    <>{isRegister ?(<Navigate to={"/login"}  />):(<div>
+      <form
+        onSubmit={handleSubmit(registerUser)}
+        className="mx-auto flex w-96 flex-col items-center space-y-5 rounded-lg border px-5 py-10 shadow-xl"
+      >
         <div className="flex flex-col items-center">
           <img src={logo} alt="logo" />
           <h1 className="text-3xl font-bold text-gray-700 mx-auto">
@@ -64,13 +54,13 @@ const RegisterPage = () => {
           <div className="relative mt-2 w-full">
             <input
               type="text"
-              {...register('mobile')}
-              id="mobil"
+              {...register("contact")}
+              id="contact"
               className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label
-              htmlFor="mobile"
+              htmlFor="contact"
               className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
             >
               Enter your 10-digit mobile no
@@ -82,7 +72,7 @@ const RegisterPage = () => {
             <input
               type="text"
               id="email"
-              {...register('userId')}
+              {...register("email")}
               className="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
               placeholder=" "
             />
@@ -97,7 +87,7 @@ const RegisterPage = () => {
         <div className="w-full">
           <div className="relative mt-2 w-full">
             <input
-            ref={passwordRef}
+              ref={passwordRef}
               type="password"
               {...register("password")}
               id="password"
@@ -111,11 +101,23 @@ const RegisterPage = () => {
               Enter Your Password
             </label>
             {!showPassword ? (
-              <div onClick={()=>{setShowPassword(true);passwordRef.current.type = "text"}} className="absolute bottom-3 left-[19rem]">
+              <div
+                onClick={() => {
+                  setShowPassword(true);
+                  passwordRef.current.type = "text";
+                }}
+                className="absolute bottom-3 left-[19rem]"
+              >
                 <IoEye size={25} color="gray" />
               </div>
             ) : (
-              <div onClick={()=>{setShowPassword(false);passwordRef.current.type = "password"}} className="absolute bottom-3 left-[19rem]">
+              <div
+                onClick={() => {
+                  setShowPassword(false);
+                  passwordRef.current.type = "password";
+                }}
+                className="absolute bottom-3 left-[19rem]"
+              >
                 <IoEyeOff size={25} color="gray" />
               </div>
             )}
@@ -189,12 +191,15 @@ const RegisterPage = () => {
         </button> */}
         <div className="mt-8">
           <p className="text-indigo-700 hover:text-pink-700 text-sm">
-            Already have an account <Link to={"/login"} >
-            <ins>click here</ins></Link>
+            Already have an account{" "}
+            <Link to={"/login"}>
+              <ins>click here</ins>
+            </Link>
           </p>
         </div>
       </form>
-    </div>
+    </div>)}
+    </>
   );
 };
 
