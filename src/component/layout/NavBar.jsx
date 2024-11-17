@@ -14,11 +14,11 @@ const NavBar = () => {
   let isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const userInfo = useSelector((state) => state.auth.loggedInUserData);
 
-  console.log(`LoginStatus: ${isLoggedIn}`);
+  // console.log(`LoginStatus: ${isLoggedIn}`);
   const dispatch = useDispatch();
 
   return (
-    <header className="h-fit flex items-center md:justify-around justify-between bg-blue-600 sticky top-0 z-50 text-xl py-3 text-white rounded-b shadow-2xl">
+    <header className="h-fit flex items-center md:justify-around justify-between bg-blue-600 sticky top-0 z-10 text-xl py-3 text-white rounded-b shadow-2xl">
       {/* COMPANY LOGO */}
       <div className="pl-5 md:pl-0">
         <Link to={"/"}>

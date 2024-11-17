@@ -10,6 +10,7 @@ import NewProductPage from "./pages/AdminPages/NewProductPage";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAsync } from "./redux/product/productSlice";
 import { getFromLocal } from "./redux/auth/authSlice";
+import Modal from "./component/uiComponets/Modal";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const App = () => {
           <Route index element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/test" element={<NewProductPage />} />
+          <Route path="/test" element={<Modal ><h1>Hello</h1></Modal>} />
           <Route path="product" element={<ShopPage />} />
           <Route path="product/:name" element={<ProductPage />} />
         </Route>
