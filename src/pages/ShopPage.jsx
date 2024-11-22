@@ -11,7 +11,7 @@ const ShopPage = () => {
   const [rangeVal, setRangeVal] = useState(0);
 
   const priceRange = useMemo(
-    () => [...new Set(fetchedData.map((item) => item.finalprice))],
+    () => [...new Set(fetchedData?.map((item) => item.finalprice))],
     [fetchedData]
   );
 
@@ -26,7 +26,7 @@ const ShopPage = () => {
   }, [priceRange]);
 
   const filteredProducts = useMemo(() => {
-    return fetchedData.filter((item) => item.finalprice <= parseInt(rangeVal));
+    return fetchedData?.filter((item) => item.finalprice <= parseInt(rangeVal));
   }, [fetchedData, rangeVal]);
 
   return (
@@ -51,11 +51,11 @@ const ShopPage = () => {
         <div className="heading text-center sticky top-0 md:block">
           <h1 className="text-3xl font-bold">Shop Page</h1>
           <span className="text-sm text-gray-500">
-            Showing {filteredProducts.length} of {fetchedData.length} results
+            Showing {filteredProducts?.length} of {fetchedData?.length} results
           </span>
         </div>
         <div className="my-4 border-2 p-2 min-h-[60vh] flex justify-center rounded-3xl">
-          {filteredProducts.length ? (
+          {filteredProducts?.length ? (
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {filteredProducts.map((product, index) => (
                 <Link
@@ -74,8 +74,8 @@ const ShopPage = () => {
               ))}
             </div>
           ) : (
-            <h4 className="text-5xl h-full font-extrabold text-center">
-              No Product Found!
+            <h4 className="text-5xl h-full my-auto font-extrabold text-center">
+              No Products Found!
             </h4>
           )}
         </div>

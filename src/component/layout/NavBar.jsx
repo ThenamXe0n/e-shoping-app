@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Logo from "./logo-eShop.svg";
 import { Link } from "react-router-dom";
-import { NavList } from "../../Data/NavItemData";
+import { NavList } from "../../data/NavItemData";
 import { FaRegUser } from "react-icons/fa";
 import SearchBar from "../uiComponets/SearchBar";
 import { IoIosMenu } from "react-icons/io";

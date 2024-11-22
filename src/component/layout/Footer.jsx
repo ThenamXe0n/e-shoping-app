@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./logo-eShop.svg";
-import { FooterCompany, FooterQuick } from "../../Data/NavItemData";
+import { FooterCompany, FooterQuick } from "../../data/NavItemData";
 
 const Footer = () => {
   return (

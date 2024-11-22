@@ -23,9 +23,9 @@ const ProductCard = ({ product }) => {
       </h2>
       <p className="text-gray-800 text-lg">
         <span className="text-sm text-gray-500">
-          M.R.P <span className="line-through"> ₹{product?.price}</span>
+          M.R.P <span className="line-through"> ₹{product?.price}</span>{" "}
         </span>
-        ₹{product?.finalprice}
+        ₹ {product?.finalprice}
       </p>
     </div>
   );
@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
 const ProductDisplaySection = () => {
   const fetchedData = useSelector((state) => state.product.product);
   // console.log("redux:", fetchedData);
-  const startProduct = Math.floor(Math.random() * (fetchedData.length - 5));
+  const startProduct = Math.floor(Math.random() * (fetchedData?.length - 5));
   const endProduct = startProduct + 5;
   const featuredProducts = fetchedData?.slice(startProduct, endProduct);
 
@@ -43,7 +43,7 @@ const ProductDisplaySection = () => {
       <h1 className="text-center font-[cursive] h-fit lg:h-9 text-3xl font-semibold col-span-full">
         Featured Products!
       </h1>
-      {featuredProducts.map((item, index) => (
+      {featuredProducts?.map((item, index) => (
         <Link
           key={index}
           className="flex justify-center items-center"

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
