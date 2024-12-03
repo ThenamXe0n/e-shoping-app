@@ -3,7 +3,8 @@ import { GoStarFill } from "react-icons/go";
 const ProductCard = ({ img, title, price, finalPrice, rating }) => {
   const stars = [];
   const ratingProducer = () => {
-    for (let i = 0; i < rating; i++) {
+    let ratingInt = parseInt(rating)
+    for (let i = 0; i < ratingInt; i++) {
       stars.push(<GoStarFill fill="yellow" key={i} />);
     }
   };

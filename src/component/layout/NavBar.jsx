@@ -3,7 +3,7 @@ import Logo from "./logo-eShop.svg";
 import { Link } from "react-router-dom";
 import { NavList } from "../../data/NavItemData";
 import { FaRegUser } from "react-icons/fa";
-import SearchBar from "../uiComponets/SearchBar";
+import SearchBar from "../uiComponents/SearchBar";
 import { IoIosMenu } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutLocal } from "../../redux/auth/authSlice";

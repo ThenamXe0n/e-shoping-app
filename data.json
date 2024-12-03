@@ -53,7 +53,7 @@
       "category": "Accessories",
       "sub_category": "backpack",
       "rating": 3,
-      "images": "[\"https://cdn06.nnnow.com/web-images/large/styles/U6PRKX1ODFU/1610292047922/1.jpg\\\"]",
+      "images": ["https://cdn06.nnnow.com/web-images/large/styles/U6PRKX1ODFU/1610292047922/1.jpg"],
       "discription": "Women hand bag",
       "product_id": "a30a",
       "id": "21e3"

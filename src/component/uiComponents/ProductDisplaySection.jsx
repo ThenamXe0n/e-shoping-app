@@ -21,11 +21,11 @@ const ProductCard = ({ product }) => {
       <h2 className="mt-1 uppercase text-center text-xl font-semibold">
         {product?.product}
       </h2>
-      <p className="text-gray-800 text-lg">
-        <span className="text-sm text-gray-500">
+      <p className="text-gray-800 text-sm">
+        <span className="text-gray-500">
           M.R.P <span className="line-through"> ₹{product?.price}</span>{" "}
         </span>
-        ₹ {product?.finalprice}
+        ₹{product?.finalprice}
       </p>
     </div>
   );

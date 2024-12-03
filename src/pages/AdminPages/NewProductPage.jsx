@@ -1,8 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import ProductContext from "../../component/contextApi/ProductContext";
+import { useSelector } from "react-redux";
 
 const NewProductPage = () => {
   const {
@@ -12,7 +11,7 @@ const NewProductPage = () => {
     reset,
   } = useForm();
 
-  const { fetchedData } = useContext(ProductContext);
+  const fetchedData = useSelector((state) => state.product.product);
   const filterCategory = [...new Set(fetchedData.map((item) => item.category))];
 
   //1) Form Response is first Send here
@@ -32,8 +31,8 @@ const NewProductPage = () => {
     }
 
     // ADDING DISCOUNT VALUES
-    const discountAmount = price - finalprice
-    const discountPercent = (discountAmount/price)*100
+    const discountAmount = price - finalprice;
+    const discountPercent = (discountAmount / price) * 100;
     const productCreationMeta = {
       creationDate: new Date(),
       images: [],
@@ -52,7 +51,7 @@ const NewProductPage = () => {
     await axios.post("http://localhost:8080/allproducts", data);
     console.log(data);
     const registerMore = window.confirm(
-      "Registration Successfull! Do You want to Register More?"
+      "Registration Successful! Do You want to Register More?"
     );
     registerMore
       ? reset()
@@ -104,21 +103,21 @@ const NewProductPage = () => {
               id="product"
               className="border-1 rounded-lg w-full border border-gray-300 bg-transparent p-2.5 focus:border-blue-600 focus:outline-none focus:ring-0"
             />
-            {/* FUNTIONALITY TO BE ADDED */}
+            {/* FUNCTIONALITY TO BE ADDED */}
             <span onClick={console.warn("Add Functionality For more Images")}>
               Add more Images?
             </span>
           </div>
           <div className="my-1 w-full md:w-3/4 lg:w-4/6 text-gray-800 md:mx-auto">
-            <label htmlFor="discription" className="cursor-text text-sm ">
+            <label htmlFor="description" className="cursor-text text-sm ">
               Give a description
             </label>
             <span className="text-red-500 ml-7">
-              <ErrorMessage errors={errors} name="discription" />
+              <ErrorMessage errors={errors} name="description" />
             </span>
             <input
-              {...register("discription")}
-              id="discription"
+              {...register("description")}
+              id="description"
               className="border-1 rounded-lg w-full border border-gray-300 bg-transparent p-2.5 focus:border-blue-600 focus:outline-none focus:ring-0"
             />
           </div>

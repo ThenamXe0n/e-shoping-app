@@ -38,7 +38,7 @@ const SearchBar = () => {
           }}
           className="w-full py-1 rounded-lg focus:outline-none text-black pl-8 focus:bg-white bg-[#fff9] cursor-text duration-300"
         />
-        {/* SEARCHED PRODUCT BOX WITH A CONDITION OF ENTERING ATLEAST 3 CHAR AT SEARCH */}
+        {/* SEARCHED PRODUCT BOX WITH A CONDITION OF ENTERING AT LEAST 3 CHAR AT SEARCH */}
         {searchValue.length >= 3 && (
           <ul className="max-h-80 overflow-y-auto w-full left-0 mt-3 md:w-1/2 md:left-80 lg:w-1/4 lg:left-auto shadow-2xl shadow-black rounded-lg  fixed bg-[#fff]">
             {/* MAPPING OF FILTERED DATA */}

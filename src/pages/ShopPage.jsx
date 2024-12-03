@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
-// import ProductContext from "../component/contextApi/ProductContext";
 import { useSelector } from "react-redux";
 
 const ShopPage = () => {
