@@ -1,0 +1,498 @@
+{
+  "allproducts": [
+    {
+      "product": "casio watch",
+      "thumbnail": "https://m.media-amazon.com/images/I/71D7Lbg-s-L._SX679_.jpg",
+      "price": 3000,
+      "finalprice": 2800,
+      "brand": "Titan",
+      "category": "Accessories",
+      "sub_category": "Watch",
+      "rating": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/71j-zlnn+tL._SX679_.jpg"
+      ],
+      "discription": "Titan brown belt with silver round dial men's wrist watch",
+      "product_id": "a152",
+      "id": "20f6"
+    },
+    {
+      "product": "Red tape white sneakers",
+      "thumbnail": "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/i/l/y/8-rsl021-red-tape-white-black-original-imagw6whg3ewycqu.jpeg?q=70&crop=false",
+      "price": 3000,
+      "finalprice": 2500,
+      "brand": "Red Tape",
+      "category": "Footwear",
+      "sub_category": "shoes",
+      "rating": 5,
+      "images": "[\"https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/i/l/y/8-rsl021-red-tape-white-black-original-imagw6whg3ewycqu.jpeg?q=70&crop=false\\",
+      "discription": "Casual Sneaker Shoes for Men | Soft Cushioned Insole, Slip-Resistance Sneakers For Men  (White)",
+      "product_id": "d521",
+      "id": "168e"
+    },
+    {
+      "product": "Casion watch",
+      "thumbnail": "https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/A/A1/A15/A158WA-1/us-assets/A158WA-1_Seq1.png.transform/main-visual-pc/image.png",
+      "price": 1500,
+      "finalprice": 1460,
+      "brand": "Casio",
+      "category": "Accessories",
+      "sub_category": "watch",
+      "rating": 4,
+      "images": "[\"https://cdn06.nnnow.com/web-images/large/styles/U6PRKX1ODFU/1610292047922/1.jpg\\\"]",
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "ds44",
+      "id": "4050"
+    },
+    {
+      "product": "Tommy Hilfiger Women's Jaden",
+      "thumbnail": "https://cdn06.nnnow.com/web-images/large/styles/U6PRKX1ODFU/1610292047922/1.jpg",
+      "price": 475,
+      "finalprice": 340,
+      "brand": "Tommy Hilfiger",
+      "category": "Accessories",
+      "sub_category": "backpack",
+      "rating": 3,
+      "images": ["https://cdn06.nnnow.com/web-images/large/styles/U6PRKX1ODFU/1610292047922/1.jpg"],
+      "discription": "Women hand bag",
+      "product_id": "a30a",
+      "id": "21e3"
+    },
+    {
+      "product": "redmi 12",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDapp__krhQW-LfCQ0eCCaN-4Vq_wiNu20Gw&s",
+      "price": 19990,
+      "finalprice": 11999,
+      "brand": "Redmi",
+      "category": "Electronics",
+      "sub_category": "phone",
+      "rating": 3,
+      "images": "[\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDapp__krhQW-LfCQ0eCCaN-4Vq_wiNu20Gw&s\\\"]",
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "180e",
+      "id": "101c"
+    },
+    {
+      "product": "Calvin Klein Gabrianna Novelty",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTSf1g1CZUTnlaRmgQYpIVmffXBoW4WX9Idg&s",
+      "price": 475,
+      "finalprice": 400,
+      "brand": "Wonder",
+      "category": "Accessories",
+      "sub_category": "backpack",
+      "rating": 3,
+      "images": "[\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTSf1g1CZUTnlaRmgQYpIVmffXBoW4WX9Idg&s\\\"]",
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "4dsa",
+      "id": "fd68"
+    },
+    {
+      "product": "Men's Leather Red Tape shoes",
+      "thumbnail": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/96c75d5b-eae8-4ec1-93f7-c378b16913be.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+      "price": 1200,
+      "finalprice": 970,
+      "brand": "Red Tape",
+      "category": "Footwear",
+      "sub_category": "shoes",
+      "rating": 3,
+      "images": [
+        "https://m.media-amazon.com/images/S/aplus-media-library-service-media/96c75d5b-eae8-4ec1-93f7-c378b16913be.__CR0"
+      ],
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "dsa4",
+      "id": "4e36"
+    },
+    {
+      "product": "full Sleeve Shirt Women's",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp39oNOxCicC0LWPwRyjAZnn5F0zgh8Qb65A&s",
+      "price": 475,
+      "finalprice": 429,
+      "brand": "Whitetails",
+      "category": "Top Wear",
+      "sub_category": "shirt",
+      "rating": 3,
+      "images": "[\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp39oNOxCicC0LWPwRyjAZnn5F0zgh8Qb65A&s\\\"]",
+      "discription": "Wome's Pink Full Sleeve Shirt",
+      "product_id": "333c",
+      "id": "6386"
+    },
+    {
+      "product": "Tommy Hilfiger Girls Jaden",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Xy1kgGmP1MdYqgqHfEgjCtWh0LEEkP-lFA&s",
+      "price": 3400,
+      "finalprice": 3199,
+      "brand": "Tommy Hilfiger",
+      "category": "Top Wear",
+      "sub_category": "t-shirt",
+      "rating": 5,
+      "images": "[\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Xy1kgGmP1MdYqgqHfEgjCtWh0LEEkP-lFA&s\\\"]",
+      "discription": "Pink half sleeve t-shirt for women's",
+      "product_id": "f448",
+      "id": "e350"
+    },
+    {
+      "product": "Samsung note 24 ultra",
+      "thumbnail": "https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 119000,
+      "finalprice": 100000,
+      "brand": "samsung",
+      "category": "Electronics",
+      "sub_category": "smartphone",
+      "rating": 2,
+      "images": [
+        "https://image-us.samsung.com/us/smartphones/galaxy-s24/all-gallery/01_E3_TitaniumGray_Lockup_1600x1200.jpg"
+      ],
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "152s",
+      "id": "ac10"
+    },
+    {
+      "product": "Owala freeship water bottel",
+      "thumbnail": "https://m.media-amazon.com/images/I/715oyjtlPcL._AC_SX679_.jpg",
+      "price": 1500,
+      "finalprice": 1000,
+      "brand": "owala freeship",
+      "category": "Accessories",
+      "sub_category": "bottle",
+      "rating": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/715oyjtlPcL._AC_SX679_.jpg"
+      ],
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "15ds",
+      "id": "a684"
+    },
+    {
+      "product": "BOLTFIT CAP",
+      "thumbnail": "https://m.media-amazon.com/images/I/410PFyWS44L._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 700,
+      "finalprice": 500,
+      "brand": "boltfit",
+      "category": "Accessories",
+      "sub_category": "cap",
+      "rating": 1,
+      "images": [
+        "https://m.media-amazon.com/images/I/410PFyWS44L._SX679_.jpg"
+      ],
+      "discription": "Boldfit Head Caps for Men Unisex Mens Caps with Adjustable Strap in Summer for Men Caps Men for All Sports Cap For Girls caps Gym Caps for Men Women Cap Sports Caps for Men with Airholes - Black",
+      "product_id": "1s15",
+      "id": "eff0"
+    },
+    {
+      "product": "HP LAPTOP",
+      "thumbnail": "https://m.media-amazon.com/images/I/71svDE-zMXL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 70000,
+      "finalprice": 50000,
+      "brand": "laptop",
+      "category": "Electronics",
+      "sub_category": "professional laptop",
+      "rating": 2,
+      "images": [
+        "https://m.media-amazon.com/images/I/71tcUliY1hL._SX679_.jpg"
+      ],
+      "discription": "HP Laptop 15s, 12th Gen Intel Core i5-1235U, 15.6-inch (39.6 cm), FHD, 16GB DDR4, 512GB SSD, Intel Iris Xe graphics, Backlit KB,MSO,Thin & Light, Dual speakers (Win 11, Silver, 1.69 kg), fq5330TU",
+      "product_id": "15s5",
+      "id": "5dad"
+    },
+    {
+      "product": "APPLE LAPTOP",
+      "thumbnail": "https://m.media-amazon.com/images/I/618d5bS2lUL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 399900,
+      "finalprice": 190000,
+      "brand": "Apple",
+      "category": "Electronics",
+      "sub_category": "professional laptop",
+      "rating": 4,
+      "images": [
+        "https://m.media-amazon.com/images/I/618d5bS2lUL._SX466_.jpg"
+      ],
+      "discription": "Apple 2023 MacBook Pro (16-inch, M3 Max chip with 16‑core CPU and 40‑core GPU, 48GB Unified Memory, 1TB) - Space Black",
+      "product_id": "15gf",
+      "id": "d40c"
+    },
+    {
+      "product": "DELL LAPTOP",
+      "thumbnail": "https://m.media-amazon.com/images/I/51zY-mOR7kL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 196093,
+      "finalprice": 150000,
+      "brand": "Dell",
+      "category": "Electronics",
+      "sub_category": "professional laptop",
+      "rating": 2,
+      "images": [
+        "https://m.media-amazon.com/images/I/51zY-mOR7kL._SX679_.jpg"
+      ],
+      "discription": "Dell XPS 13 9340 Laptop, AI Enabled Processor Intel Core Ultra 7 155H, 16GB + 512Gb SSD, 13.4\" (34.03cm) FHD+ 500 nits Display, Backlit KB + FPR, Win 11 + MSO'21 & 15 Month McAfee, Platinum, 1.19kg",
+      "product_id": "151f",
+      "id": "a993"
+    },
+    {
+      "product": "LENOVO LAPTOP",
+      "thumbnail": "https://m.media-amazon.com/images/I/81g6AgbeMIL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 167890,
+      "finalprice": 160000,
+      "brand": "lenevo",
+      "category": "Electronics",
+      "sub_category": "professional laptop",
+      "rating": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/81g6AgbeMIL._SX679_.jpg"
+      ],
+      "discription": "Lenovo IdeaPad Pro 5 Intel Core Ultra 7 155H Built-in AI 16\" (40.6cm) 2K OLED 400Nits 120Hz Laptop (16GB/1TB SSD/NVIDIA RTX 3050 6GB/Win11/MSO 21/FHD+IR Camera/3Mon GamePass/Grey/1.9Kg), 83D4002NIN",
+      "product_id": "g515g",
+      "id": "4fad"
+    },
+    {
+      "product": "WANDERLOOMS CAP",
+      "thumbnail": "https://m.media-amazon.com/images/I/71NpWFOAKAL._SX679_.jpg",
+      "price": 800,
+      "finalprice": 700,
+      "brand": "wanderlooms",
+      "category": "Accessories",
+      "sub_category": "cap for girls",
+      "rating": 4,
+      "images": [
+        "https://m.media-amazon.com/images/I/71xs-4rQ7pL._SX679_.jpg"
+      ],
+      "discription": "WANDERLOOMS Caps for Men & Women Unisex Soft Cotton Adjustable Strip Cap Quick Drying Sun Hat Protection Summer for All Sports Cap for Girls Gym",
+      "product_id": "1gff",
+      "id": "12a7"
+    },
+    {
+      "product": "BACCA BUCCI SHOES",
+      "thumbnail": "https://m.media-amazon.com/images/I/71bR9W8vyvL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 2600,
+      "finalprice": 2500,
+      "brand": "bacca bucci",
+      "category": "Footwear",
+      "sub_category": "sports shoes",
+      "rating": 1,
+      "images": [
+        "https://m.media-amazon.com/images/I/71bR9W8vyvL._SY695_.jpg"
+      ],
+      "discription": "Bacca Bucci INTENSITY with Breathable Engineered fishnet Upper and TPU Rebounce outsole for daily Training Gyming and Running",
+      "product_id": "hj15",
+      "id": "e9bb"
+    },
+    {
+      "product": "APPLE WATCH SE",
+      "thumbnail": "https://m.media-amazon.com/images/I/61rTufzD1zL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 40000,
+      "finalprice": 35000,
+      "brand": "Apple",
+      "category": "Electronics",
+      "sub_category": "sports band",
+      "rating": 2,
+      "images": [
+        "https://m.media-amazon.com/images/I/61rTufzD1zL._SX679_.jpg"
+      ],
+      "discription": "Apple Watch SE (2nd Gen, 2023) [GPS 40mm] Smartwatch with Midnight Aluminum Case with Midnight Sport Band S/M. Fitness & Sleep Tracker, Crash Detection, Heart Rate Monitor, Retina Display",
+      "product_id": "hgf5",
+      "id": "91ce"
+    },
+    {
+      "product": "APPLE  IPHONE15 1TB",
+      "thumbnail": "https://m.media-amazon.com/images/I/81qlME2wWmL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 140000,
+      "finalprice": 100000,
+      "brand": "Apple",
+      "category": "Electronics",
+      "sub_category": "smartphone",
+      "rating": 2,
+      "images": [
+        "https://m.media-amazon.com/images/I/81qlME2wWmL._SX679_.jpg"
+      ],
+      "discription": "Apple iPhone 15 Pro (1 TB) - White Titanium",
+      "product_id": "15f2",
+      "id": "313a"
+    },
+    {
+      "product": "URBAN JUNGLE BACKPACK",
+      "thumbnail": "https://m.media-amazon.com/images/I/51fzvylFuFL._SX679_.jpg",
+      "price": 3999,
+      "finalprice": 3500,
+      "brand": "URBAN JUNGLE",
+      "category": "Accessories",
+      "sub_category": "backpack",
+      "rating": 0,
+      "images": [
+        "https://cdn06.nnnow.com/web-images/large/styles/U6PRKX1ODFU/1610292047922/1.jpg"
+      ],
+      "discription": "Urban Jungle Metro Roll-Top Backpack 13.5 Liters Water Resistant, Top-Open, Padded, Premium Polyurethane Laptop Backpack",
+      "product_id": "15gf",
+      "id": "4e5d"
+    },
+    {
+      "product": "FUR JADEN 40L Weekender Backpack",
+      "thumbnail": "https://m.media-amazon.com/images/I/41p7Iq8lLyL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 2000,
+      "finalprice": 1000,
+      "brand": "FUR JADEN",
+      "category": "Accessories",
+      "sub_category": "backpack",
+      "rating": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/41p7Iq8lLyL.jpg"
+      ],
+      "discription": "FUR JADEN 40L Weekender Travel Laptop Backpack with Anti Theft Pocket, Organizer, 15.6 Inch Padded Laptop Sleeve and Dual Handles",
+      "product_id": "158g",
+      "id": "e900"
+    },
+    {
+      "product": "Noise ColorFit Pro 5",
+      "thumbnail": "https://m.media-amazon.com/images/I/61UnBdX9z8L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 10900,
+      "finalprice": 10000,
+      "brand": "NOISE",
+      "category": "Electronics",
+      "sub_category": "smartwatch",
+      "rating": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/61UnBdX9z8L._SX679_.jpg"
+      ],
+      "discription": "Noise Newly Launched ColorFit Pro 5 Max 1.96\" AMOLED Display Smart Watch, BT Calling, Post Training Workout Analysis, VO2 Max, Rapid Health, 5X Faster Data Transfer - Elite Black",
+      "product_id": "156f",
+      "id": "c9a8"
+    },
+    {
+      "product": "WATER BOTTLE COPPER",
+      "thumbnail": "https://m.media-amazon.com/images/I/71cRT-d2YCL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 1849,
+      "finalprice": 1700,
+      "brand": "MERCAPE",
+      "category": "Accessories",
+      "sub_category": "water bottle",
+      "rating": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/71cRT-d2YCL._SX679_.jpg"
+      ],
+      "discription": "MERCAPE® - 100% Pure Meena Print Copper Water Bottle | Leak Proof, Durable & Rust Proof | Non-Toxic & BPA Free Bottles | Eco Friendly Water Bottle (900 ml) (Pack of 1)",
+      "product_id": "158g",
+      "id": "ee67"
+    },
+    {
+      "product": "POWERBEATS EARBUDS",
+      "thumbnail": "https://m.media-amazon.com/images/I/51NjdmOqOtL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 35000,
+      "finalprice": 25000,
+      "brand": "Powerbeats",
+      "category": "Electronics",
+      "sub_category": "Earbuds",
+      "rating": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/61yKNXIjxQL._SX522_.jpg"
+      ],
+      "discription": "Powerbeats Pro Bluetooth Wireless In Ear Earphones with Mic (Navy Blue)",
+      "product_id": "156g",
+      "id": "d6a0"
+    },
+    {
+      "product": "IMPULSE BACKPACK",
+      "thumbnail": "https://m.media-amazon.com/images/I/61Kid06KFsL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 3500,
+      "finalprice": 3000,
+      "brand": "travelbag",
+      "category": "Accessories",
+      "sub_category": "bag",
+      "rating": 2,
+      "images": [
+        "https://m.media-amazon.com/images/I/61Kid06KFsL._SY741_.jpg"
+      ],
+      "discription": "Impulse rucksack bags 75 litres travel bag for men tourist bag for travel backpack for hiking trekking Bag for men camping thames bag with 1 Year Warranty",
+      "product_id": "054f",
+      "id": "5271"
+    },
+    {
+      "product": "FASTRACK WATCH FOR MEN",
+      "thumbnail": "https://m.media-amazon.com/images/I/51bzah11WpL._SX679_.jpg",
+      "price": 1800,
+      "finalprice": 800,
+      "brand": "fastrack",
+      "category": "Accessories",
+      "sub_category": "Watch",
+      "rating": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/51EiXZQZcJL._SX679_.jpg"
+      ],
+      "discription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla .",
+      "product_id": "2fg3",
+      "id": "1fe2"
+    },
+    {
+      "product": "SAMSUN LED TV",
+      "thumbnail": "https://m.media-amazon.com/images/I/91mRUNnqqnL._SX522_.jpg",
+      "price": 62000,
+      "finalprice": 52100,
+      "brand": "samsung",
+      "category": "Electronics",
+      "sub_category": "tv",
+      "rating": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/91mRUNnqqnL._SX522_.jpg"
+      ],
+      "discription": "Samsung 108 cm (43 inches) Full HD Smart LED TV UA43T5450AKXXL (Black)",
+      "product_id": "125f",
+      "id": "58fa"
+    },
+    {
+      "product": "APPLE IPAD PRO",
+      "thumbnail": "https://m.media-amazon.com/images/I/81S05k6p0xL._SX679_.jpg",
+      "price": 201000,
+      "finalprice": 100000,
+      "brand": "apple",
+      "category": "Electronics",
+      "sub_category": "tablet",
+      "rating": 0,
+      "images": "[\"https://m.media-amazon.com/images/I/81S05k6p0xL._SX679_.jpg\\",
+      "discription": "Apple iPad Pro 11″ (4th generation): with M2 chip, Liquid Retina display, 2TB, Wi-Fi 6E + 5G cellular, 12MP front/12MP and 10MP back cameras, Face ID, all-day battery life – Silver",
+      "product_id": "hgh1",
+      "id": "6768"
+    },
+    {
+      "id": "09e8",
+      "product": "Minimalist Watch",
+      "thumbnail": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+      "discription": "This is a minimalistic watch for all the creative people out there.",
+      "category": "Electronics",
+      "sub_category": "watch",
+      "brand": "Titan",
+      "rating": "4",
+      "price": "11000",
+      "finalprice": "8000",
+      "creationDate": "2024-10-25T13:11:04.297Z",
+      "images": []
+    },
+    {
+      "id": "de11",
+      "product": "Note Headphones",
+      "thumbnail": "https://static.vecteezy.com/system/resources/thumbnails/024/841/285/small_2x/wireless-headphone-isolated-on-transparent-background-high-quality-bluetooth-headphone-for-advertising-and-product-catalogs-generative-ai-png.png",
+      "discription": "Minimalistic Headphone with active noise cancellation and surround sound support with these you can listen to your favourite music without being bothered with the surroundings ",
+      "category": "Electronics",
+      "sub_category": "Headphones",
+      "brand": "Nothing",
+      "rating": "4",
+      "price": "15000",
+      "finalprice": "3000",
+      "creationDate": "2024-10-25T19:02:40.731Z",
+      "images": [],
+      "discountAmount": 12000,
+      "discountPercent": 80
+    }
+  ],
+  "allUsers": [
+    {
+      "id": "88c9",
+      "name": "Demo User",
+      "mobile": "9999988888",
+      "email": "demo@gmail.com",
+      "password": "Demo@1234"
+    },
+    {
+      "id": "6a2c",
+      "name": "Luv Agrawal",
+      "mobile": "9302031000",
+      "email": "LuvAgrawal@gmail.com",
+      "password": "Abc@1234"
+    }
+  ]
+}
